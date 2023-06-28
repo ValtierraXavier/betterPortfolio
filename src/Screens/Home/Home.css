@@ -1,0 +1,31 @@
+#homePageContainer{
+    padding-top: 7rem;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.iconDiv{
+    border-radius: 25px;
+    margin-right: .5rem;
+    margin-left: 9rem;
+}
+
+
+
+#content1{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    padding: .3rem;
+    margin-left: .5rem;
+    font-size: xx-large;
+    font-weight: 300;
+    width: 22.5rem;
+    height:3rem;
+    border: dashed black;
+    border-radius:1rem;
+}
+
+

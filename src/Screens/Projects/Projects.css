@@ -1,0 +1,33 @@
+#projectPageContainer{
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content: space-evenly;
+}
+
+.cardsDisplayArea{
+    display: flex;
+    flex-flow: column  wrap;
+    justify-items: center;
+}
+
+.pageTitle{
+    margin: 3rem 4rem;
+}
+
+#makeCommentButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: space-around;
+    margin: 0 24.5% 0 25%;
+    border: solid black;
+    border-radius: .5rem;
+    height: 2rem;
+}
+#makeCommentButton:hover{
+    border: solid lightcoral;
+    justify-content: center;
+    border-radius: .5rem;
+    transition-duration: .2s;
+    font-weight: 300;
+}

@@ -1,0 +1,20 @@
+[  
+    {
+        "projectName": "Beat the House",
+        "url": "https://valtierraxavier.github.io/Project-1-Repo/",
+        "imgUrl": "https://i.imgur.com/c2PiDZg.png",
+        "point1": "Front-end basic slot-machine game",
+        "point2": "Displays Full-Win when all symbols match. Displays Partial-Win when two symbols match. Displays Lose when there are no matches",
+        "point3": "Spacebar to start; R to reset; H for info",
+        "comments": []
+    },
+    {
+        "projectName": "Rick & Morty Slider API-UI",
+        "url": "https://git.generalassemb.ly/xavaltierra/api-ui-pattern.git",
+        "imgUrl": "https://i.imgur.com/76XJwaq.png",
+        "point1": "Simple Slider UI",
+        "point2": "Consumes external restful API",
+        "point3": "Will add Keyboard support",
+        "comments": []
+    }
+]

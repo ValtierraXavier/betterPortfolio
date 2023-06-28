@@ -1,0 +1,101 @@
+.comments{
+    display: flex;
+    flex-flow: column nowrap;
+    border: solid black;
+    border-radius: 1vw;
+    margin: 5rem 2rem;
+    width: 50%;
+    height: 25rem;
+    align-self: flex-start;
+    box-sizing: border-box;
+    padding: .2rem;
+}
+.commentLabelDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: space-between;
+    justify-content: space-between
+}
+
+.commentLabel{
+    margin:1rem;
+    padding: .3rem;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.listDiv{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.commentItselfDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid white;
+    min-height: 3rem;
+    width: 15rem;
+    margin: 0rem 0rem 0rem 3rem;
+    border-radius: .5rem 1.2rem;
+    padding: .5rem;
+}
+
+.commentUsername{
+    font-size: small;
+    margin: .2rem .5rem .4rem 0rem;
+    font-weight: bolder;
+}
+
+.whatProject{
+    font-size: small;
+    margin: .2rem .5rem .4rem 0rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.userNameProject{
+    display: flex;
+    flex-direction: row;
+    margin: .2rem 0 0 3.2rem;
+    align-items: center;
+    font-weight: 500;
+}
+
+.commentText{
+    position:relative;
+    font-size: medium;
+    font-weight: 300;
+    min-height: 90%;
+}
+
+.actionButtons{
+    display: flex;
+    font-size: x-small;
+    width: 100%;
+    height:10%;
+    margin-top:.3rem;
+}
+
+#deleteButton{
+    border-radius: .1rem .25rem;
+    background-color: lightgrey;
+    padding:.03rem
+}
+
+#dateTimeDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: .2rem 0rem 2rem 3.2rem;
+}
+
+.dateDiv{
+    margin-right: .3rem;
+    font-size: small;
+    font-weight: 400;
+}
+
+.timeDiv{
+    font-size: small;
+    font-weight: 300;
+}

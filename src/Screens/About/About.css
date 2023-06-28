@@ -1,0 +1,68 @@
+.aboutMeDiv{
+display: flex;
+flex-flow: column nowrap;
+height: 20rem;
+}
+
+.aboutMe{
+    display:flex;
+    flex-flow:column nowrap;
+    align-content: space-between;
+    white-space: pre-wrap;
+    font-size: x-large;
+    padding: 1rem;
+    height: fit-content;
+    margin: .2rem;
+}
+
+.skillListWithModal{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 52rem;
+    height: 25rem;
+    margin: 0rem 16rem;
+}
+.skillsListItem{
+    font-size: xx-large;
+    width: fit-content;
+    height: fit-content;
+    transition-duration: .2s;
+    justify-content: space-between;
+    margin: 1rem;
+    padding:.5rem;
+}
+
+#skillsModalWindow{
+    display: none;
+    border: solid black;
+    border-radius: 5px;
+    border-width:1px;
+    height: fit-content;
+    width: 20rem;
+    color: white;
+    position: fixed;
+    z-index: 100;
+    left: none;
+    top: none;
+    bottom: none;
+    right: none;
+    background-color: rgba(77, 77, 77, 0.863);
+    padding:.5rem;
+}
+
+#skillsModalTitle{
+border-bottom: solid black;
+border-width: .5px;
+padding: .2rem;
+font-size: larger;
+margin-bottom: .25rem
+}
+
+#skillsModalSnippet{
+    border: bottom solid black;
+    border-width: .5px;
+    padding: .2rem;
+
+}
+
