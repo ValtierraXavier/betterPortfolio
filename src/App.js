@@ -13,7 +13,7 @@ function App() {
   const[projects, setProjects] = useState([])
   const[sortedComments, setSortedComments] = useState([])
   const[loadProjects, setLoadProjects] = useState(true)
-  const[loadComments, setLoadComments] = useState(true)
+  const[loadComments, setLoadComments] = useState(false)
   const[sortBy, setSortBy] = useState('All')
   const projectNameRef = useRef('')
   const sortByRef = useRef('All')
@@ -21,13 +21,15 @@ function App() {
   useEffect(()=>{
     if(loadProjects){
       getProjectData()
-    }else
+    }
     if(loadComments || sortBy === "All"){
       setTimeout(getComments,50)
       }
       if(sortBy !== 'All'){
         sortComments()
       }
+      getComments()
+      sortComments()
     },[loadProjects, loadComments, sortBy])
 
   const getProjectData = async () => {
