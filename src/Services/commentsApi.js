@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const base = 'http://localhost:5000/'
+const baseUrl = process.env.MONGO_URL || 'http://localhost:5000/'
 
 const commentsApi = axios.create({
-    baseURL: base,
+    baseURL: baseUrl,
     timeout: 2000,
     headers:{
         'Content-Type': 'application/json',

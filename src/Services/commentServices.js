@@ -5,7 +5,7 @@ import chalk from 'chalk'
 
 export const getAllComments = async () =>{
     try{
-        const data = await commentsApi.get('/comments/get');
+        const data = await commentsApi.get('/comments/get/');
         return data;
     }catch(error){
         console.log(chalk.redBright("Error: "), error);
