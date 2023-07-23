@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = process.env.MONGO_URL || 'http://localhost:5000/'
+const baseUrl = process.env.MONGO_URL || 'http://localhost:3000/'
 
 const api = axios.create({
     baseURL: baseUrl,

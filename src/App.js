@@ -9,6 +9,7 @@ import { getAllComments } from './Services/commentServices.js';
 
 function App() {
 
+  const[isLoading, setIsLoding] = useState(true)
   const[comments, setComments] = useState([])
   const[projects, setProjects] = useState([])
   const[sortedComments, setSortedComments] = useState([])
@@ -28,8 +29,6 @@ function App() {
       if(sortBy !== 'All'){
         sortComments()
       }
-      getComments()
-      sortComments()
     },[loadProjects, loadComments, sortBy])
 
   const getProjectData = async () => {
@@ -43,9 +42,9 @@ function App() {
     const getComments = async () =>{
       try{
         if(sortBy === "All"){
-          const data = await getAllComments()
-          setComments(prev => prev = data.data)
-          setSortedComments(prev => prev =data.data)
+          const commentData = await getAllComments()
+          setComments(prev => prev = commentData.data)
+          setSortedComments(prev => prev =commentData.data)
           setLoadComments(prev => prev = false)
         }
         
@@ -70,7 +69,7 @@ function App() {
       <Navbar/>
       <Home/>
       <About/>
-      <Projects sortByRef = {sortByRef} setComments={setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef} sortBy = {sortBy} setSortBy = {setSortBy} />
+      <Projects isLoading = {isLoading} sortByRef = {sortByRef} setComments={setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef} sortBy = {sortBy} setSortBy = {setSortBy} />
     </div>
   );
 }

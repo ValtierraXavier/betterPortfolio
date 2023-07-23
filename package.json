@@ -9,8 +9,10 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.4",
     "chalk": "^5.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongodb": "^5.7.0",
     "mongoose": "^6.10.4",
     "node-fetch": "^3.3.0",
     "nodemon": "^2.0.20",
@@ -22,11 +24,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && railway run node ./Database/DB/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "seed": "node Database/Seed/ProjectsSeed.js  && node Database/Seed/CommentSeed.js"
+    "seed": "node Database/Seed/CommentSeed.js  && node Database/Seed/ProjectsSeed.js"
   },
   "eslintConfig": {
     "extends": [

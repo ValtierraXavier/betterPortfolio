@@ -3,7 +3,7 @@ import './Projects.css'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard.jsx'
 import CommentModal from '../../Components/AddCommentModal/addCommentModal.jsx'
 
-export default function Projects({ sortByRef, setComments, comments, setLoadComments, projects, setProjects, projectNameRef, setLoadProjects, sortBy, setSortBy }) {
+export default function Projects({ isLoading, sortByRef, setComments, comments, setLoadComments, projects, setProjects, projectNameRef, setLoadProjects, sortBy, setSortBy }) {
 const [whatProject, setWhatProject] = useState('')
 
 const openModal = (e) =>{
@@ -20,6 +20,7 @@ const openModal = (e) =>{
 },[])
 
   return (
+    isLoading ?
     <div className='projectPageContainer' id='projectPageContainer'>
       <h1 className='pageTitle'>Projects</h1>
       <div className='cardsDisplayArea'>
@@ -34,6 +35,7 @@ const openModal = (e) =>{
         <CommentModal sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} whatProject = { whatProject } setWhatProject = { setWhatProject } setComments = {setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects = {setLoadProjects} projectNameRef = {projectNameRef} projects = {projects}/>
       </div>
       </div>
-    </div>     
+    </div> :
+    <div>Loading.</div>    
   )
 }

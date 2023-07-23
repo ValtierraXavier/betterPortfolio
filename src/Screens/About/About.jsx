@@ -154,15 +154,15 @@ const typingSpeed = (ms) => {
   },[])
 
   return (
-    <div className='aboutPageContainer' id = 'aboutPageContainer'>
+    <div className= 'aboutPageContainer' id = 'aboutPageContainer'>
     <h1
-      className='content'>Who am I?
+      className= 'content'>Who am I?
     </h1>
-    <div className='aboutMeDiv'>
+    <div className= 'aboutMeDiv'>
       <p className = 'aboutMe' id = 'aboutMe'>{typed}</p>
       <p className = 'aboutMe' id = 'aboutMe2 '>{typed2}</p>
     </div>
-    <p className id = 'canUse'>I can use:</p>
+    <p id = 'canUse'>I can use:</p>
       <div className='skillListWithModal'>
     {skillSet.map((element, index)=>{
       return(
