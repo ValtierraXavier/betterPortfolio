@@ -29,13 +29,20 @@ function App() {
       if(sortBy !== 'All'){
         sortComments()
       }
+      // if(isLoading === true){
+      //   setLoadProjects(prev =>prev = true)
+      //   setLoadComments(prev =>prev = true)
+      // }
     },[loadProjects, loadComments, sortBy])
 
   const getProjectData = async () => {
     try{
       const projectData = await getAllData()
-      setProjects(prev => prev = projectData.data)
-      setLoadProjects(prev => prev = false)
+      if(projectData.data){
+        setProjects(prev => prev = projectData.data)
+        setLoadProjects(prev => prev = false)
+        setIsLoding(prev=> prev = false)
+      }else{setLoadProjects(prev =>prev=true)}
       }catch(error){console.log('error')}
     }
     
@@ -43,9 +50,12 @@ function App() {
       try{
         if(sortBy === "All"){
           const commentData = await getAllComments()
-          setComments(prev => prev = commentData.data)
-          setSortedComments(prev => prev =commentData.data)
-          setLoadComments(prev => prev = false)
+          if(commentData.data){
+            setComments(prev => prev = commentData.data)
+            setSortedComments(prev => prev = commentData.data)
+            setLoadComments(prev => prev = false)
+            setIsLoding(prev=> prev = false)
+          }else{setLoadComments(prev =>prev=true)}
         }
         
       }catch(error){console.log(error)}

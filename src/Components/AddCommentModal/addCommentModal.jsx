@@ -3,7 +3,7 @@ import './addCommentModal.css'
 import Comments from '../Comments/Comments.jsx'
 import { createComment } from '../../Services/commentServices.js'
 
-export default function AddCommentModal({ sortBy, setSortBy, sortByRef, setWhatProject, whatProject, setComments, comments, setLoadComments, setLoadProjects, projectNameRef, projects }) { 
+export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRef, setWhatProject, whatProject, setComments, comments, setLoadComments, setLoadProjects, projectNameRef, projects }) { 
 
   const [author, setAuthor] = useState('')
   const [commentText, setCommentText] = useState('')
@@ -90,7 +90,7 @@ export default function AddCommentModal({ sortBy, setSortBy, sortByRef, setWhatP
 
           </form>
       </div>
-    <Comments sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/>
+    <Comments isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/>
     </div>
   )
 }
