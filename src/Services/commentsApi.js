@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = process.env.MONGO_URL || 'http://localhost:5000/'
+const baseUrl = 'https://portfoliodb-production.up.railway.app/'
 
 const commentsApi = axios.create({
     baseURL: baseUrl,
