@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './addCommentModal.css'
-import Comments from '../Comments/Comments.jsx'
 import { createComment } from '../../Services/commentServices.js'
 
 export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRef, setWhatProject, whatProject, setComments, comments, setLoadComments, setLoadProjects, projectNameRef, projects }) { 
@@ -19,11 +18,13 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
     } 
     
     const closeModal =()=>{
-      const addModal = document.getElementById('modalBackground')
+      const addBackground = document.getElementById('modalBackground')
+      const addModal = document.getElementById('addCommentModal')
       addModal.style.display= 'none'
-      setAuthor(prev => prev = '')
-      setCommentText(prev => prev = '')
-      setWhatProject(prev => prev = '')
+      addBackground.style.display= 'none'
+      setAuthor(prev => prev = "")
+      setCommentText(prev => prev = "")
+      setWhatProject(prev => prev = "")
     }
     
     const handleMakeComment = async (e) =>{
@@ -39,7 +40,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
         await createComment(commentToAdd)
         setLoadComments(prev => prev = true)
         closeModal()
-        setWhatProject(prev => prev = '')
+        setWhatProject(prev => prev = "")
         setTimeout(scrollToBottom, 300)
       }catch(error){console.log(error)}
     }
@@ -90,7 +91,6 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
 
           </form>
       </div>
-    <Comments isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/>
     </div>
   )
 }

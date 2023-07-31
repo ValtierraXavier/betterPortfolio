@@ -139,13 +139,11 @@ const typingSpeed = (ms) => {
   }
   
   function highLight(e){
-    e.target.style.color = 'rgb(162, 218, 245)'
     const value = (e.target.innerHTML)
     const rect = e.target.getBoundingClientRect()
     openModal(value, rect)
   }
    function unHighLight(e){
-    e.target.style.color = 'rgb(0, 0, 0)'
     closeModal()
   }
 

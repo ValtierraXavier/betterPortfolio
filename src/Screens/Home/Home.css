@@ -4,12 +4,16 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-content: space-around;
+    margin: 2% 0 5% 0;
+    min-height: fit-content;
+    color:white;
 }
 
 .iconDiv{
-    border-radius: 25px;
+    display: inline-block;
+    border-radius: 15px;
     margin-right: .5rem;
-    margin-left: 9rem;
+    /* margin-left: 9rem; */
 }
 
 
@@ -22,10 +26,11 @@
     margin-left: .5rem;
     font-size: xx-large;
     font-weight: 300;
-    width: 22.5rem;
-    height:3rem;
-    border: dashed black;
+    min-width: 8%;
+    height:1%;
+    border: dashed lightblue;
     border-radius:1rem;
+    transition-timing-function: ease-in-out  ;
 }
 
 

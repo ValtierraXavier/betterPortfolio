@@ -1,10 +1,11 @@
 import React from 'react'
 import './Comments.css'
 import CommentSort from '../CommentSort/CommentSort.jsx'
+import CommentModal from '../AddCommentModal/addCommentModal.jsx'
 import { deleteComment } from '../../Services/commentServices.js'
 
 
-export default function Comments({ sortBy, setSortBy, sortByRef, projects, whatProject, setComments, comments, setLoadComments, parentId }) {
+export default function Comments({ isLoading, setWhatProject, setLoadProjects, projectNameRef, sortBy, setSortBy, sortByRef, projects, whatProject, setComments, comments, setLoadComments, parentId }) {
 
   
 
@@ -19,9 +20,10 @@ export default function Comments({ sortBy, setSortBy, sortByRef, projects, whatP
 
   return (
     <div className = 'comments'>
+      <CommentModal isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} whatProject = { whatProject } setWhatProject = { setWhatProject } setComments = {setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects = {setLoadProjects} projectNameRef = {projectNameRef} projects = {projects}/>
       <div className='commentLabelDiv'>
         <div className ='commentLabel'>Comments</div>
-        <CommentSort sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} comments={comments} setComments={setComments}/>
+          <CommentSort setSortBy={setSortBy} projects={projects} />
       </div>
         <div className='listDiv' id ='listDiv' >
           {comments.map((element)=>(

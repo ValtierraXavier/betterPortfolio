@@ -1,0 +1,20 @@
+.CommentsSort{
+    color:white;
+    width:fit-content;
+    font-size: 1rem;
+}
+/* .CommentsSort:hover{
+    border:solid green;
+    width:fit-content;
+    font-size: 1rem;
+} */
+
+@media(min-width: 300px) and (max-width: 1223px){
+    .CommentsSort{
+        display: flex;
+        flex-flow: column nowrap;
+        color:white;
+        width:30%;
+        font-size: 1rem;
+    }
+}

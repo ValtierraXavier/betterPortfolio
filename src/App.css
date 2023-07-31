@@ -1,3 +1,10 @@
 .pageContainer{
-    height: fit-content;
+    height: max-content;
+}
+
+body,html{
+    background-color:black;
+    color: white;
+    scroll-behavior: smooth;
+    padding-bottom: 1%;
 }

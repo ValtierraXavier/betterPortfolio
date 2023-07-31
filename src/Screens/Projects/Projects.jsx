@@ -1,15 +1,18 @@
 import React,{ useEffect, useState } from 'react'
 import './Projects.css'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard.jsx'
-import CommentModal from '../../Components/AddCommentModal/addCommentModal.jsx'
+import Comments from '../../Components/Comments/Comments.jsx'
 
 export default function Projects({ isLoading, sortByRef, setComments, comments, setLoadComments, projects, setProjects, projectNameRef, setLoadProjects, sortBy, setSortBy }) {
 const [whatProject, setWhatProject] = useState('')
 
 const openModal = (e) =>{
-  const addModal = document.getElementById('modalBackground')
+  const addBackground = document.getElementById('modalBackground')
+  const addModal = document.getElementById('addCommentModal')
+  addBackground.style.display = "flex"
   addModal.style.display = "flex"
-  addModal.scrollIntoView()
+  addBackground.scrollIntoView()
+
   projectNameRef.current = (e.target.dataset.projectname)
   setWhatProject(prev => prev = projectNameRef.current)
 }
@@ -35,9 +38,7 @@ const openModal = (e) =>{
               <div id = 'makeCommentButton' onClick = {openModal} className = 'makeComment' data-projectname = {info.projectName} data-parentid = {info._id} >Say something about this project</div>
             </div>))
         }
-        </div>
-        <div id = 'commentsDiv'>
-          <CommentModal isLoading ={isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} whatProject = { whatProject } setWhatProject = { setWhatProject } setComments = {setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects = {setLoadProjects} projectNameRef = {projectNameRef} projects = {projects}/>
+          <Comments projectNameRef={projectNameRef} isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setWhatProject={setWhatProject} setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/>
         </div>
       </div>
       }

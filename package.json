@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "seed": "node Database/Seed/CommentSeed.js  && node Database/Seed/ProjectsSeed.js"
+    "seed": "node Database/Seed/CommentSeed.js  && node Database/Seed/ProjectsSeed.js",
+    "commiThis": "git add . && git commit -m 'routine commit.' && git push origin main"
   },
   "eslintConfig": {
     "extends": [

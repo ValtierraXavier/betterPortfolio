@@ -3,6 +3,7 @@
    flex-flow: column nowrap;
    justify-content: space-evenly;
    color: white;
+   height:fit-content
 }
 
 .cardsDisplayArea{
@@ -12,7 +13,7 @@
 }
 
 .pageTitle{
-    margin: 3rem 4rem;
+    margin: 2% 4rem;
 }
 
 #makeCommentButton{
@@ -21,7 +22,7 @@
     align-items: center;
     justify-self: space-around;
     margin: 0 24.5% 0 25%;
-    border: solid black;
+    border: solid lightblue;
     border-radius: .5rem;
     height: 2rem;
 }

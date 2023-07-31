@@ -10,12 +10,13 @@ export default function CommentSort({ sortBy, setSortBy, sortByRef, sortedBy, se
 
     return(
         <div className = 'CommentsSort'>
-            <label htmlFor = 'sortOptions'>Sort: </label>
+            <label htmlFor = 'sortOptions'>Sort:</label>
 
-            <select onChange = {sortingBy} name = 'sortOptions' >
+            <select onChange = {sortingBy} id = 'sortOptions' name = 'sortOptions' >
                 <option >All</option>
-                {projects.map((element)=>(
-                    <option key = {element.projectName} >{element.projectName}</option>
+                {projects.map((element, index)=>(
+                    // console.log(element.projectName)
+                    <option key = {index} >{element.projectName}</option>
                 ))}
             </select>
         </div>

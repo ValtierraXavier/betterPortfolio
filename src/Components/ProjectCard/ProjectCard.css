@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 50vw;
-    margin: 2vw 0vw 2vw 25vw;
+    width: 50%;
+    margin: 2% 25%;
     justify-self: center;
 }
 
 .titleLink{
-    color: black;
+    color: white;
     text-decoration: none;
     margin: .5vw;
     transition-duration: .2s;
@@ -16,16 +16,17 @@
 
 .card:hover .titleLink{
     margin: 1vw 0vw 0vw 1vw;
-    color:white;
+    color:lightblue;
     transition-duration: .2s;
+    transition-timing-function: ease-in-out;
 }
 
 .projectCardsContainer{
     display: flex;
     flex-flow: row nowrap;
-    width: 49.8vw;
-    height: 25vw;
-    border: solid black;
+    width: 100%;
+    height:fit-content;
+    border: solid lightblue;
     border-radius:10px;
 }
 
@@ -44,5 +45,5 @@
 }
 
 #commentsDiv{
-    
+   height: 100%;
 }

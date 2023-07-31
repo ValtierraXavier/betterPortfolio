@@ -9,14 +9,14 @@ export default function Home(){
     const sentenceArr = [
         
         "Hi! My name is Xavier!", 
-    "Welcome to my Portfolio!",
-    "I hope you'll like it here.", 
-    "Look at me! Im a dev!",
-    "Well...Hello there gorgeous",
-    "Hire me!!"
-    
+        "Welcome to my Portfolio!",
+        "I hope you'll like it here.", 
+        "Look at me! Im a dev!",
+        "Well...Hello there gorgeous",
+        "Hire me!!"
+
     ]
-const intervalTiming = (sentenceArr.length) * 5500
+const intervalTiming = (sentenceArr.length) * 4800
     
     const spellSpeed = (ms)=>{
         return new Promise(

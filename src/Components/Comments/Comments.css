@@ -1,43 +1,47 @@
+
 .comments{
     display: flex;
+    position:inherit;
     flex-flow: column nowrap;
-    border: solid black;
-    border-radius: 1vw;
-    margin: 5rem 2rem;
     width: 50%;
-    height: 25rem;
-    align-self: flex-start;
-    box-sizing: border-box;
-    padding: .2rem;
+    margin: 0% 25%;
+    border: solid lightblue 1px;
+    border-radius: 5px ;
 }
 .commentLabelDiv{
     display: flex;
     flex-flow: row nowrap;
-    align-items: space-between;
-    justify-content: space-between
+    align-items: center;
+    justify-content: space-around;
+    height: fit-content;
+    width:60%;
+    margin: 0 20%;
+
 }
 
 .commentLabel{
-    margin:1rem;
-    padding: .3rem;
+    margin:.5%;
     font-size: x-large;
     font-weight: 400;
 }
 
-.listDiv{
+.listDiv#listDiv{
+    position:relative;
+    height: 60vh;
     overflow-y: auto;
     scroll-behavior: smooth;
+    transition-timing-function: ease-in-out;
 }
 
 .commentItselfDiv{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid white;
-    min-height: 3rem;
-    width: 15rem;
-    margin: 0rem 0rem 0rem 3rem;
-    border-radius: .5rem 1.2rem;
+    border: 1px solid lightblue;
+    width: 50% ;
+    margin: 0 0 0 8%;
+    border-radius: 5px 10px;
     padding: .5rem;
 }
 
@@ -80,7 +84,8 @@
 #deleteButton{
     border-radius: .1rem .25rem;
     background-color: lightgrey;
-    padding:.03rem
+    padding:.03rem;
+    color: black;
 }
 
 #dateTimeDiv{
@@ -98,4 +103,18 @@
 .timeDiv{
     font-size: small;
     font-weight: 300;
+}
+.CommentsSort{
+    align-self: center;
+    font-size: x-large;
+}
+
+@media(max-width:670px){
+    .commentLabelDiv{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: space-between;
+        justify-content: center;
+        height: 5%;
+    }
 }

@@ -33,51 +33,53 @@ export default function Navbar() {
     
     let verticalPosition = window.pageYOffset;
     let pos = ((window.screen.height) - verticalPosition)
+    if(pos == 800){
 
-    if(pos <= 800 && pos >= 0){
-
-      document.body.style.transitionDuration = '.3s'
-      document.getElementById('Nav').style.backgroundColor = 'rgba(255, 255, 0, 0.95)'
-      document.body.style.backgroundColor = 'yellow'
-      document.body.style.color = 'black'
-      document.getElementsByClassName('nav-link')[0].style.color = 'black'
-      document.getElementsByClassName('nav-link')[1].style.color = 'black'
-      document.getElementsByClassName('nav-link')[2].style.color = 'black'
-
-    }else if(pos <= 80 && pos >= -900){
-
-      document.getElementById('Nav').style.transitionDuration = '.3s'
-      document.getElementById('Nav').style.backgroundColor = 'rgba(0, 0, 0, .7)'
-      document.body.style.transitionDuration = '.3s'
-      document.body.style.backgroundColor = 'black'
-      document.body.style.color = 'rgb(54, 199, 247)'
-      document.getElementsByClassName('nav-link')[0].style.color = 'rgb(54, 199, 247)'
-      document.getElementsByClassName('nav-link')[1].style.color = 'rgb(54, 199, 247)'
-      document.getElementsByClassName('nav-link')[2].style.color = 'rgb(54, 199, 247)'
-
-    }else if(pos <= (-760)){
-
-      document.getElementById('Nav').style.transitionDuration = '.3s'
-      document.getElementById('Nav').style.backgroundColor = 'rgba(255, 0, 0, 0.92)'
-      document.body.style.transitionDuration = '.3s'
-      document.body.style.backgroundColor = 'red'
-      document.body.style.color = 'black'
-      document.getElementsByClassName('nav-link')[0].style.color = 'black'
-      document.getElementsByClassName('nav-link')[1].style.color = 'black'
-      document.getElementsByClassName('nav-link')[2].style.color = 'black'
-      
     }
-    if(pos<=-2020 || pos >=799){
+    // else if(pos <= 799 && pos >= 0){
+
+    //   document.body.style.transitionDuration = '.3s'
+    //   document.getElementById('Nav').style.backgroundColor = 'rgba(255, 255, 0, 0.95)'
+    //   document.body.style.backgroundColor = 'yellow'
+    //   document.body.style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[0].style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[1].style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[2].style.color = 'black'
+
+    // }else if(pos <= 80 && pos >= -900){
+
+    //   document.getElementById('Nav').style.transitionDuration = '.3s'
+    //   document.getElementById('Nav').style.backgroundColor = 'rgba(0, 0, 0, .7)'
+    //   document.body.style.transitionDuration = '.3s'
+    //   document.body.style.backgroundColor = 'black'
+    //   document.body.style.color = 'rgb(54, 199, 247)'
+    //   document.getElementsByClassName('nav-link')[0].style.color = 'rgb(54, 199, 247)'
+    //   document.getElementsByClassName('nav-link')[1].style.color = 'rgb(54, 199, 247)'
+    //   document.getElementsByClassName('nav-link')[2].style.color = 'rgb(54, 199, 247)'
+
+    // }else if(pos <= (-760)){
+
+    //   document.getElementById('Nav').style.transitionDuration = '.3s'
+    //   document.getElementById('Nav').style.backgroundColor = 'rgba(255, 0, 0, 0.92)'
+    //   document.body.style.transitionDuration = '.3s'
+    //   document.body.style.backgroundColor = 'red'
+    //   document.body.style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[0].style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[1].style.color = 'black'
+    //   document.getElementsByClassName('nav-link')[2].style.color = 'black'
+      
+    // }
+    if(pos<=-2020 || pos >=798){
       }else{
         if (lastVerticalPosition > verticalPosition) {
 
           document.getElementById('Nav').style.transitionDuration = '.3s'
-          document.getElementsByClassName('content')[0].style.transitionDuration = '.3s'
+          // document.getElementsByClassName('content')[0].style.transitionDuration = '.3s'
           document.getElementsByClassName('nav-link')[0].style.transitionDuration = '.3s'
-          document.getElementById('Nav').style.height = '9%'
-          document.getElementsByClassName('nav-link')[0].style.fontSize = 'xx-large'
-          document.getElementsByClassName('nav-link')[1].style.fontSize = 'xx-large'
-          document.getElementsByClassName('nav-link')[2].style.fontSize = 'xx-large'
+          document.getElementById('Nav').style.height = '4rem'
+          document.getElementsByClassName('nav-link')[0].style.fontSize = '3rem'
+          document.getElementsByClassName('nav-link')[1].style.fontSize = '3rem'
+          document.getElementsByClassName('nav-link')[2].style.fontSize = '3rem'
           document.getElementsByClassName('nav-link')[0].style.display = 'block'
           document.getElementsByClassName('nav-link')[1].style.display = 'block'
           document.getElementsByClassName('nav-link')[2].style.display = 'block'
@@ -85,7 +87,7 @@ export default function Navbar() {
         } else {
 
           document.getElementsByClassName('nav-link')[0].style.transitionDuration = '.3s'
-          document.getElementsByClassName('content')[0].style.transitionDuration = '.3s'
+          // document.getElementsByClassName('content')[0].style.transitionDuration = '.3s'
           document.getElementById('Nav').style.transitionDuration = '.3s'
           document.getElementById('Nav').style.height = '0%'
           document.getElementsByClassName('nav-link')[0].style.fontSize = '0%'
@@ -117,7 +119,6 @@ function handleProjectScroll(){
 useEffect(()=>{
   document.getElementById("Nav").style.top = "2.5%";
   document.getElementsByClassName('content')[0].style.marginTop = '7%'
-  document.body.style.backgroundColor = 'yellow'
   document.body.style.color = 'black'
   showHide()
 },[])
