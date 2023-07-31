@@ -13,7 +13,9 @@ export default function ProjectCard({item}) {
         </Link>
     </h1>
       <div className ='projectCardsContainer'>
-        <img className = 'projectImage' src={`${item.imgUrl}`} alt = "Project screen shots"></img>
+        <a href = {`${item.url}`} target = '_blank'>
+          <img className = 'projectImage' src={`${item.imgUrl}`} alt = "Project screen shots"></img>
+        </a>
         <div className='listContainer'>
           <ul className='projectList'>
             <li className='projectListItems'>{item.point1}</li>

@@ -72,7 +72,8 @@
     .projectCardsContainer{
         display: flex;
         flex-flow: column nowrap;
-        width: 100%;
+        width: 95%;
+        margin: 0 2.5%;
         height: 35vh;
         border: solid lightblue;
         border-radius:10px;
