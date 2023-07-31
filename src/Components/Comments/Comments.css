@@ -21,7 +21,7 @@
 
 .commentLabel{
     margin:.5%;
-    font-size: x-large;
+    font-size: medium;
     font-weight: 400;
 }
 
@@ -112,9 +112,14 @@
 @media(max-width:670px){
     .commentLabelDiv{
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: row nowrap;
         align-items: space-between;
-        justify-content: center;
+        justify-content: space-around;
         height: 5%;
     }
+    .comments{
+        width: 100%;
+        margin:5% 0 0 0;
+    }
+    
 }
