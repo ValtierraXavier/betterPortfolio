@@ -154,7 +154,7 @@ const typingSpeed = (ms) => {
   return (
     <div className= 'aboutPageContainer' id = 'aboutPageContainer'>
     <h1
-      className= 'content'>Who am I?
+      className= 'content' id = 'aboutContent'>Who am I?
     </h1>
     <div className= 'aboutMeDiv'>
       <p className = 'aboutMe' id = 'aboutMe'>{typed}</p>

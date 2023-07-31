@@ -2,6 +2,7 @@
 display: flex;
 flex-flow: column nowrap;
 height: 100%;
+color: white;
 }
 
 .aboutMe{
@@ -157,6 +158,27 @@ margin-bottom: .25rem
         }
 }
 
-@media(min-width: 300px) and (max-width: 1223px){
-    
+@media(min-width: 200px) and (max-width: 1223px){
+    .skillListWithModal{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content:space-evenly;
+            border: solid lightblue 1px;
+            border-radius: 5px;
+            height: auto;
+            width: 95%;
+            margin: 0 2.5%;        
+        }
+    .skillsListItem{
+        width: 95%;
+        margin: 0 0 0 5%;
+    }
+
+    .skillsListItem:hover{
+        width: 100%;
+        margin: 0;
+        color: skyblue;
+        transition-timing-function: ease-in-out;
+        transition-duration: .2s;
+    }
 }
