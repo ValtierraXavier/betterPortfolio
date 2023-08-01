@@ -86,7 +86,7 @@ const typingSpeed = (ms) => {
       let sentenceArr2 = []
       for(let k = 0; k < pageContent.length; k++){
         selection = pageContent[k]
-        for(let l = 0; l < selection.length || selection.length == undefined; l++){
+        for(let l = 0; l < selection.length || selection.length === undefined; l++){
           if(k <= 4){
             setTyped2(prev => prev = '')
             await typingSpeed(5)
@@ -111,23 +111,23 @@ const typingSpeed = (ms) => {
     skillThing.style.left = `${(rec.left + 22)}px`
     skillThing.style.top = `${(rec.top +55)}px`
     skillThing.style.display = 'inline'
-    if(el == 'HTML'){
+    if(el === 'HTML'){
       setSkillsModal(prev => prev = htmlModalInfo)
-    }else if(el == 'CSS'){
+    }else if(el === 'CSS'){
       setSkillsModal(prev => prev = cssModalInfo)
-    }else if(el == 'JavaScript'){
+    }else if(el === 'JavaScript'){
       setSkillsModal(prev => prev = javascriptModalInfo)
-    }else if(el == 'Python'){
+    }else if(el === 'Python'){
       setSkillsModal(prev => prev = pythonModalInfo)
-    }else if(el == 'React'){
+    }else if(el === 'React'){
       setSkillsModal(prev => prev = reactModalInfo)
-    }else if(el == 'MongoDB'){
+    }else if(el === 'MongoDB'){
       setSkillsModal(prev => prev = mongodbModalInfo)
-    }else if(el == 'SQL Database'){
+    }else if(el === 'SQL Database'){
       setSkillsModal(prev => prev = sqlModalInfo)
-    }else if(el == 'GitHub'){
+    }else if(el === 'GitHub'){
       setSkillsModal(prev => prev = gitModalInfo)
-    }else if(el == 'Postman'){
+    }else if(el === 'Postman'){
       setSkillsModal(prev => prev = postmanModalInfo)
     }
   }

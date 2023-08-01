@@ -13,7 +13,9 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
     
     const scrollToBottom = () =>{
       const commentList = document.getElementById('listDiv')
+      const page = document.getElementById('commentsContainer')
       const scrollHeight = (commentList.scrollHeight)
+      page.scrollIntoView()
       commentList.scrollTop = (scrollHeight)
     } 
     
@@ -42,49 +44,50 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
         closeModal()
         setWhatProject(prev => prev = "")
         setTimeout(scrollToBottom, 300)
+        setTimeout()
       }catch(error){console.log(error)}
     }
 
   return (
     <div className = "addCommentModal" id = "addCommentModal">
       
-      <div id = 'modalBackground'>
+      <div className = 'modalBackground' id = 'modalBackground'>
       
         <div className ='modalWhatProject' id = 'modalWhatProgect' >Commenting on: {projectNameRef.current}</div>
       
           <form className ="commentForm" onSubmit = {handleMakeComment}>
       
             <input 
-            id = 'commentNameInput'
-            className = 'commentInput'
-            type ="text" 
-            placeholder ="Name"
-            required = 'required'
-            value = {author}
-            onChange={(e)=> setAuthor(prev => prev = e.target.value)}
+              id = 'commentNameInput'
+              className = 'commentInput'
+              type ="text" 
+              placeholder ="Name"
+              required = 'required'
+              value = {author}
+              onChange={(e)=> setAuthor(prev => prev = e.target.value)}
             />
 
             <textarea 
-            id='commentTextInput'
-            className = 'commentInput'
-            type ="text" 
-            placeholder ="Comment"
-            required = 'required'
-            value= {commentText}
-            onChange = {(e) => setCommentText(prev => prev = e.target.value)}
+              id='commentTextInput'
+              className = 'commentInput'
+              type ="text" 
+              placeholder ="Comment"
+              required = 'required'
+              value= {commentText}
+              onChange = {(e) => setCommentText(prev => prev = e.target.value)}
             />
 
             <div className = 'modalActionButtons'>
             
               <input 
-              id = 'submitButton'
-              className = 'commentButton'
-              type ="submit"/>
+                id = 'submitButton'
+                className = 'commentButton'
+                type ="submit"/>
 
               <div 
-              id = 'closeButton' 
-              className = 'commentButton'
-              onClick={closeModal}>Close
+                id = 'closeButton' 
+                className = 'commentButton'
+                onClick={closeModal}>Close
               </div>
 
             </div>

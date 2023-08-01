@@ -19,7 +19,7 @@ export default function Comments({ isLoading, setWhatProject, setLoadProjects, p
   }
 
   return (
-    <div className = 'comments'>
+    <div className = 'comments' id = 'commentsContainer'>
       <CommentModal isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} whatProject = { whatProject } setWhatProject = { setWhatProject } setComments = {setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects = {setLoadProjects} projectNameRef = {projectNameRef} projects = {projects}/>
       <div className='commentLabelDiv'>
         <div className ='commentLabel'>Comments</div>
