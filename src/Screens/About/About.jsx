@@ -66,6 +66,12 @@ const [typed, setTyped] = useState("")
 const [typed2, setTyped2] = useState("")
 const [skillsModal, setSkillsModal] =  useState({})
 const skillThing = document.getElementById('skillsModalWindow') 
+const whoAmI = 'Who Am I?'
+const whoAmIArr = [...whoAmI]
+const techSkills = 'Technical Skills'
+const techSkillsArr = [...techSkills]
+
+
 
 
 const selectionSpeed = (ms) => {
@@ -74,37 +80,37 @@ const selectionSpeed = (ms) => {
     )}
 const typingSpeed = (ms) => {
   return new Promise(
-    resolve => {setTimeout(()=>{resolve()}, ms)}
+    resolve1 => {setTimeout(()=>{resolve1()}, ms)}
     )}
     
-    const typeItOut = async () => {
-      let selection
-      let selection2
-      let sentence
-      let sentence2
-      let sentenceArr = []
-      let sentenceArr2 = []
-      for(let k = 0; k < pageContent.length; k++){
-        selection = pageContent[k]
-        for(let l = 0; l < selection.length || selection.length === undefined; l++){
-          if(k <= 4){
-            setTyped2(prev => prev = '')
-            await typingSpeed(5)
-            sentenceArr.push(selection[l])
-            sentence = sentenceArr.toString().replace(/,/g,"")
-            setTyped(prev => prev = sentence)
-          } 
-          if(k>=5){
-            selection2 = pageContent[k]  
-            await typingSpeed(5)
-            sentenceArr2.push(selection2[l])
-            sentence2 = sentenceArr2.toString().replace(/,/g,"")
-            setTyped2(prev => prev = sentence2)
-            }
+const typeItOut = async () => {
+  let selection
+  let selection2
+  let sentence
+  let sentence2
+  let sentenceArr = []
+  let sentenceArr2 = []
+  for(let k = 0; k < pageContent.length; k++){
+    selection = pageContent[k]
+    for(let l = 0; l < selection.length || selection.length === undefined; l++){
+      if(k <= 4){
+        setTyped2(prev => prev = '')
+        await typingSpeed(5)
+        sentenceArr.push(selection[l])
+        sentence = sentenceArr.toString().replace(/,/g,"")
+        setTyped(prev => prev = sentence)
+      } 
+      if(k>=5){
+        selection2 = pageContent[k]  
+        await typingSpeed(5)
+        sentenceArr2.push(selection2[l])
+        sentence2 = sentenceArr2.toString().replace(/,/g,"")
+        setTyped2(prev => prev = sentence2)
         }
-        await selectionSpeed(120)
-        
-      }
+    }
+    await selectionSpeed(120)
+    
+  }
   }
   const openModal =(el, rec) => {
     skillThing.style.height = 'fit-content'
@@ -147,24 +153,41 @@ const typingSpeed = (ms) => {
     closeModal()
   }
 
+
   useEffect(()=>{
     typeItOut()
   },[])
+ 
+  
 
   return (
     <div className= 'aboutPageContainer' id = 'aboutPageContainer'>
-    <h1
-      className= 'content' id = 'aboutContent'>Who am I?
-    </h1>
+      <div className ='aboutContentContainer'>
+      {whoAmIArr.map((element, index)=> {
+        return(
+            <h1
+              key={index} data-index = {index} className= 'whoami' id = 'aboutContent'>{element}
+            </h1>
+        )
+      })
+    }
+    </div>
+
     <div className= 'aboutMeDiv'>
       <p className = 'aboutMe' id = 'aboutMe'>{typed}</p>
       <p className = 'aboutMe' id = 'aboutMe2 '>{typed2}</p>
     </div>
-    <p id = 'canUse'>I can use:</p>
+    <div className = 'techSkillsContainer' >
+      {techSkillsArr.map((element, index)=>{
+        return(
+          <h1 key = {index} data-index = {index} className = 'techs' id = 'canUse'>{element}</h1>
+        )
+      })}
+    </div>
       <div className='skillListWithModal'>
     {skillSet.map((element, index)=>{
       return(
-        <div className = 'skillsListItem' id = {`skill${index+1}`} onMouseEnter={highLight} onMouseLeave={unHighLight}>{element}</div>
+        <div key = {index} className = 'skillsListItem'  id = 'skillsList' onMouseEnter={highLight} onMouseLeave={unHighLight}>{element}</div>
       )
     })
   }

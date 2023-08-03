@@ -68,9 +68,19 @@ margin-bottom: .25rem
     border: bottom solid black;
     border-width: .5px;
     padding: .2rem;
-
 }
 
+.aboutContentContainer{
+    display:flex;
+    flex-flow: row nowrap;
+    white-space: pre;
+}
+
+.techSkillsContainer{
+    display:flex;
+    flex-flow: row nowrap;
+    white-space: pre;
+}
 
 
 @media(min-width:1024px) and (max-width:1620px){

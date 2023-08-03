@@ -9,12 +9,14 @@
     font-size: 1rem;
 } */
 
-@media(min-width: 300px) and (max-width: 1223px){
+@media(min-width: 200px) and (max-width: 799px){
     .CommentsSort{
         display: flex;
-        flex-flow: column nowrap;
+        position: relative;
+        flex-flow: row nowrap;
         color:white;
-        width:30%;
         font-size: 1rem;
+        width: 50%;
+        right:4%
     }
 }

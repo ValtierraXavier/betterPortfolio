@@ -109,17 +109,25 @@
     font-size: x-large;
 }
 
-@media(max-width:670px){
+@media(min-width: 200px) and (max-width: 799px){
     .commentLabelDiv{
         display: flex;
+        position: relative;
         flex-flow: row nowrap;
-        align-items: space-between;
-        justify-content: space-around;
-        height: 5%;
+        align-content: space-around;
+        justify-content: space-between;
+        height: fit-content;
+        padding: 2%;
+        width: 100%;
+        margin: 0;
     }
     .comments{
-        width: 95%;
-        margin:5% 2.5% 0 2.5%;
+       width:98%;
+       margin:0 1%;
+    }
+
+    #sortOptions {
+        width: 100%;
     }
     
 }

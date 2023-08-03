@@ -1,5 +1,4 @@
 #homePageContainer{
-    padding-top: 7rem;
     display:flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -32,5 +31,24 @@
     border-radius:1rem;
     transition-timing-function: ease-in-out  ;
 }
+@media(min-width: 200px) and (max-width: 799px){
+    #homePageContainer{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        height: fit-content;
+        align-content: space-around;
+        justify-content: space-around;
+    }
+    #homePageContainer > img{
+        width: 60%;
+        margin: 0 20%;
+        height: 50%;
+    }
 
+    #homePageContainer > div{
+        width: 90%;
+        margin: 3% 2.5%;
+    }
+}
 

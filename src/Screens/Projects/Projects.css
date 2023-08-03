@@ -34,6 +34,11 @@
     transition-duration: .2s;
     font-weight: 300;
 }
+.projectTitleContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    white-space: pre;
+}
 
 @media(min-width:200px) and (max-width:476px){
     #makeCommentButton{

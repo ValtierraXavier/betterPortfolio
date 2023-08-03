@@ -16,13 +16,11 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
       const page = document.getElementById('commentsContainer')
       const scrollHeight = (commentList.scrollHeight)
       page.scrollIntoView()
-      commentList.scrollTop = (scrollHeight)
+      setTimeout(()=>{(commentList.scrollTop = (scrollHeight))},200)
     } 
     
     const closeModal =()=>{
       const addBackground = document.getElementById('modalBackground')
-      const addModal = document.getElementById('addCommentModal')
-      addModal.style.display= 'none'
       addBackground.style.display= 'none'
       setAuthor(prev => prev = "")
       setCommentText(prev => prev = "")
@@ -43,7 +41,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
         setLoadComments(prev => prev = true)
         closeModal()
         setWhatProject(prev => prev = "")
-        setTimeout(scrollToBottom, 300)
+        setTimeout(scrollToBottom, 10)
         setTimeout()
       }catch(error){console.log(error)}
     }
@@ -83,7 +81,6 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
                 id = 'submitButton'
                 className = 'commentButton'
                 type ="submit"/>
-
               <div 
                 id = 'closeButton' 
                 className = 'commentButton'

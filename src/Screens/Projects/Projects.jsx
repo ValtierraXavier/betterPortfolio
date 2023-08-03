@@ -8,18 +8,15 @@ const [whatProject, setWhatProject] = useState('')
 
 const openModal = (e) =>{
   const addBackground = document.getElementById('modalBackground')
-  const addModal = document.getElementById('addCommentModal')
+  addBackground.style.transition = 'ease-in-out .4s'
   addBackground.style.display = "flex"
-  addModal.style.display = "flex"
-  addBackground.scrollIntoView()
-
   projectNameRef.current = (e.target.dataset.projectname)
   setWhatProject(prev => prev = projectNameRef.current)
 }
-  
-  useEffect(()=>{
-    document.getElementsByClassName('content')[0].style.marginTop = '7%'
-},[])
+
+const proj = 'Projects'
+const projArr = [...proj]
+
 
   return (
     <div className='projectPageContainer' id='projectPageContainer'>
@@ -30,7 +27,13 @@ const openModal = (e) =>{
       </div>
       :
       <div>
-        <h1 className='pageTitle'>Projects</h1>
+        <div className = 'projectTitleContainer'>
+          {projArr.map((element, index)=>{
+            return(
+              <h1 className = 'projDivs' key = {index} data-index = {index} >{element}</h1>
+            )
+            })}
+        </div>
         <div className='cardsDisplayArea'>
         {projects.map((info)=> (
             <div>

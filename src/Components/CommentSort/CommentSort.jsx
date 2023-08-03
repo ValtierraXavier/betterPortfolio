@@ -15,7 +15,6 @@ export default function CommentSort({ sortBy, setSortBy, sortByRef, sortedBy, se
             <select onChange = {sortingBy} id = 'sortOptions' name = 'sortOptions' >
                 <option >All</option>
                 {projects.map((element, index)=>(
-                    // console.log(element.projectName)
                     <option key = {index} >{element.projectName}</option>
                 ))}
             </select>
