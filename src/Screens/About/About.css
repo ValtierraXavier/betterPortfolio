@@ -168,7 +168,7 @@ margin-bottom: .25rem
         }
 }
 
-@media(min-width: 200px) and (max-width: 1223px){
+@media(min-width: 200px) and (max-width: 799px){
     .skillListWithModal{
             display: flex;
             flex-flow: column nowrap;
@@ -191,4 +191,20 @@ margin-bottom: .25rem
         transition-timing-function: ease-in-out;
         transition-duration: .2s;
     }
+}
+
+@media(min-width: 2658px) and (max-width: 4253px){
+
+}
+
+@media(min-width: 1280px) and (max-width:2657px){
+
+}
+
+@media(min-width: 601px) and (max-width: 1279){
+
+}
+
+@media(min-width: 200px) and (max-width:600px){
+
 }

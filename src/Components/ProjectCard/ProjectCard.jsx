@@ -7,13 +7,12 @@ export default function ProjectCard({item}) {
     
   return (
     <div className = 'card'>
-    <h1 className='title'>
-        <Link className = 'titleLink' to = {`${item.url}`} target = '_blank'>           
+    
+        <a className = 'titleLink' href = {`${item.url}`} target = '_blank'>           
               {item.projectName}
-        </Link>
-    </h1>
-      <div className ='projectCardsContainer'>
-        <a href = {`${item.url}`} target = '_blank'>
+        </a>
+
+        <a className = 'imgContainer' href = {`${item.url}`} target = '_blank'>
           <img className = 'projectImage' src={`${item.imgUrl}`} alt = "Project screen shots"></img>
         </a>
         <div className='listContainer'>
@@ -26,7 +25,6 @@ export default function ProjectCard({item}) {
             <br/>
           </ul>
         </div>
-      </div>
     </div>
   )
 }

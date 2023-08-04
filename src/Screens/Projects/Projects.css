@@ -1,48 +1,67 @@
-#projectPageContainer{
-   display:flex;
-   flex-flow: column nowrap;
-   justify-content: space-evenly;
-   color: white;
-   height:fit-content
+.projectTitleContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: fit-content;
 }
 
 .cardsDisplayArea{
     display: flex;
-    flex-flow: column  wrap;
-    justify-items: center;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-bottom: 10px;
 }
 
-.pageTitle{
-    margin: 2%;
+.cardsDisplayArea > div{
+    position: relative;
+    width: 30%;
 }
 
 #makeCommentButton{
     display: flex;
+    width: 102%;
+    height: 2rem;
     justify-content: center;
     align-items: center;
-    justify-self: space-around;
-    margin: 0 25%;
-    border: solid lightblue;
-    border-radius: .5rem;
-    height: 2rem;
-    width: 50%;
-}
-#makeCommentButton:hover{
-    border: solid lightcoral;
-    justify-content: center;
-    border-radius: .5rem;
-    transition-duration: .2s;
-    font-weight: 300;
-}
-.projectTitleContainer{
-    display: flex;
-    flex-flow: row nowrap;
-    white-space: pre;
+    border: solid lightblue 1px;
+    border-radius: 5px;
+    transition: ease-in-out .2s;
 }
 
-@media(min-width:200px) and (max-width:476px){
-    #makeCommentButton{
-        margin: 0 2.5%;
+#makeCommentButton:hover{
+    background-color: lightblue;
+    border: solid white 1px;
+    color: black;
+}
+
+.commentDivider{
+    height: 10px;
+    margin: 8% 0;
+}
+
+@media(min-width: 2658px) and (max-width: 4253px){
+
+}
+
+@media(min-width: 1280px) and (max-width:2657px){
+
+}
+
+@media(min-width: 601px) and (max-width: 1279){
+
+}
+
+@media(min-width: 200px) and (max-width:600px){
+    .cardsDisplayArea{
+        display: flex;
+        position: relative;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        padding-bottom: 10px;
+    }
+
+    .cardsDisplayArea > div{
         width: 95%;
+        margin: 2.5%;
     }
 }

@@ -85,3 +85,19 @@
         left:0%;
     }
 }
+
+@media(min-width: 2658px) and (max-width: 4253px){
+
+}
+
+@media(min-width: 1280px) and (max-width:2657px){
+
+}
+
+@media(min-width: 601px) and (max-width: 1279){
+
+}
+
+@media(min-width: 200px) and (max-width:600px){
+
+}

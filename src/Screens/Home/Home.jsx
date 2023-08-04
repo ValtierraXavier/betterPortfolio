@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 
 export default function Home(){
-    
+
     const [word, setWord] = useState('')
     let sentence;
     let speed = 50
@@ -54,7 +54,7 @@ export default function Home(){
     return(
         <div className='pageContainer' id ='homePageContainer'>
             <img src='https://i.imgur.com/sMWNJ4C.jpg' height={240} alt = 'self Portrait' className = 'iconDiv'></img>
-            <div className='content' id='content1' >{word}</div>
+            <div className='typedBlurb' id='content1' >{word}</div>
         </div>
     );
 }

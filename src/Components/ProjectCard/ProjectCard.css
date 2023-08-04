@@ -1,95 +1,61 @@
 .card{
     display: flex;
-    flex-direction: column;
-    height: fit-content;
-    width: 50%;
-    margin: 1% 25%;
-    justify-self: center;
+    position: relative;
+    flex-flow:column nowrap;
+    width: 100%;
+    height: 88%;
+    border: solid lightblue 1px;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 2.5% 0 1.5% 0;
+    align-content: space-between;
 }
 
 .titleLink{
-    color: white;
     text-decoration: none;
-    margin: .5vw;
-    transition-duration: .2s;
+    font-size: 1rem;
+    font-weight: 500;
+    color:white;
+    align-items: center;
+    padding: 1.5%;
 }
 
 .card:hover .titleLink{
-    margin: 1vw 0vw 0vw 1vw;
-    color:lightblue;
-    transition-duration: .2s;
-    transition-timing-function: ease-in-out;
+    color: lightblue;
+    left: 1%;
 }
 
-.projectCardsContainer{
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    height:fit-content;
-    border: solid lightblue;
-    border-radius:10px;
+.imgContainer{
+    max-width: 100%
 }
 
 .projectImage{
-    width: 30vw;
-    height: 20vw;
-    margin: .5vw;
-    margin-top: 2.3vw;
+    position: relative;
+    width: 100%;
 }
 
 .listContainer{
-    font-size: 1.5vw;
-    font-weight: 300;
-    padding: .5vw;
+    position: relative;
+    width: 95%;
+    height: 92%;
     overflow-y: auto;
+    justify-content: center;
+    top:1%;
+    margin: 0;
 }
 
-@media(min-width:200px) and (max-width:476px){
-    .card{
-        display: flex;
-        flex-direction: column;
-        height: 80%;
-        width: 100%;
-        margin: 0;
-        justify-self: center;
-    }
-    
-    .titleLink{
-        color: white;
-        text-decoration: none;
-        margin: .5vw;
-        transition-duration: .2s;
-        font-size: medium;
-    }
-    
-    .card:hover .titleLink{
-        margin: 1vw 0vw 0vw 1vw;
-        color:lightblue;
-        transition-duration: .2s;
-        transition-timing-function: ease-in-out;
-    }
-    
-    .projectCardsContainer{
-        display: flex;
-        flex-flow: column nowrap;
-        width: 95%;
-        margin: 0 2.5%;
-        height: 50vh;
-        border: solid lightblue;
-        border-radius:10px;
-        align-content: space-between;
-    }
-    
-    .projectImage{
-        width: 90%;
-        height: 90%;
-        margin: 1% 5%;
-    }
-    
-    .listContainer{
-        font-size: 1rem;
-        font-weight: 300;
-        padding: 2%;
-        overflow-y: auto;
-    }
+@media(min-width: 2658px) and (max-width: 4253px){
+
+}
+
+@media(min-width: 1280px) and (max-width:2657px){
+
+}
+
+@media(min-width: 601px) and (max-width: 1279){
+
+}
+
+@media(min-width: 200px) and (max-width:600px){
+
 }
