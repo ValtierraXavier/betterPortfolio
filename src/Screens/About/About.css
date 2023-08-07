@@ -1,8 +1,9 @@
 .aboutMeDiv{
-display: flex;
-flex-flow: column nowrap;
-height: 100%;
-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: fit-content;
+    color: white;
 }
 
 .aboutMe{
@@ -21,11 +22,11 @@ color: white;
 .skillListWithModal{
     display: flex;
     flex-flow: row wrap;
-    justify-content:space-evenly;
+    justify-content:space-around;
     border: solid lightblue;
     height: auto;
-    width: 90%;
-    margin: 0 5%;
+    width: 75%;
+    margin: 0 12.5%;
     color:white;
 }
 .skillsListItem{
@@ -44,7 +45,7 @@ color: white;
     border-radius: 5px;
     border-width:1px;
     height: fit-content;
-    width: 75%;
+    width: 25%;
     color: white;
     position: fixed;
     z-index: 100;
@@ -82,119 +83,89 @@ margin-bottom: .25rem
     white-space: pre;
 }
 
-
-@media(min-width:1024px) and (max-width:1620px){
+@media(min-width: 2658px) and (max-width: 4253px){
     .aboutMeDiv{
         display: flex;
         flex-flow: column nowrap;
         height: 20rem;
-        }
-        
-        .aboutMe{
-            display:flex;
-            flex-flow:column nowrap;
-            justify-content: center;
-            align-content: space-between;
-            white-space: pre-wrap;
-            font-size: x-large;
-            padding: 1rem;
-            height: fit-content;
-            margin: .2rem;
-            color: white;
-        }
-        
-        .skillListWithModal{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content:space-evenly;
-            border: solid lightblue;
-            height: auto;
-            width: auto;
-            margin: 0 27.5%;        
-        }
-        .skillsListItem{
-            font-size: x-large;
-            width: fit-content;
-            height: fit-content;
-            transition-duration: .2s;
-            justify-content: space-between;
-            margin: 1rem;
-            padding:.5rem;
-            color: white;
-        }
-
-        .skillsListItem:hover{
-            font-size: x-large;
-            width: fit-content;
-            height: fit-content;
-            justify-content: space-between;
-            margin: 1rem;
-            padding:.5rem;
-            color: rgb(99, 210, 177);
-            transition-duration: .1s;
-        }
-        
-        #skillsModalWindow{
-            display: none;
-            border: solid black;
-            border-radius: 5px;
-            border-width:1px;
-            height: fit-content;
-            width: 20rem;
-            color: white;
-            position: fixed;
-            z-index: 100;
-            left: none;
-            top: none;
-            bottom: none;
-            right: none;
-            background-color: rgba(77, 77, 77, 0.863);
-            padding:.5rem;
-        }
-        
-        #skillsModalTitle{
-        border-bottom: solid black;
-        border-width: .5px;
-        padding: .2rem;
-        font-size: larger;
-        margin-bottom: .25rem
-        }
-        
-        #skillsModalSnippet{
-            border: bottom solid black;
-            border-width: .5px;
-            padding: .2rem;
-        
-        }
-}
-
-@media(min-width: 200px) and (max-width: 799px){
+    }
+    
+    .aboutMe{
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content: center;
+        align-content: space-between;
+        white-space: pre-wrap;
+        font-size: x-large;
+        padding: 1rem;
+        height: fit-content;
+        margin: .2rem;
+        color: white;
+    }
+    
     .skillListWithModal{
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content:space-evenly;
-            border: solid lightblue 1px;
-            border-radius: 5px;
-            height: auto;
-            width: 95%;
-            margin: 0 2.5%;        
-        }
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:space-evenly;
+        border: solid lightblue;
+        height: auto;
+        width: 80%;
+        margin: 0 10%;        
+    }
     .skillsListItem{
-        width: 95%;
-        margin: 0 0 0 5%;
+        font-size: x-large;
+        width: fit-content;
+        height: fit-content;
+        transition-duration: .2s;
+        justify-content: space-between;
+        margin: 1rem;
+        padding:.5rem;
+        color: white;
     }
 
     .skillsListItem:hover{
-        width: 100%;
-        margin: 0;
-        color: skyblue;
-        transition-timing-function: ease-in-out;
-        transition-duration: .2s;
+        font-size: x-large;
+        width: fit-content;
+        height: fit-content;
+        justify-content: space-between;
+        margin: 1rem;
+        padding:.5rem;
+        color: rgb(99, 210, 177);
+        transition-duration: .1s;
     }
-}
-
-@media(min-width: 2658px) and (max-width: 4253px){
-
+    
+    #skillsModalWindow{
+        display: none;
+        border: solid black;
+        border-radius: 5px;
+        border-width:1px;
+        height: fit-content;
+        width: 2%;
+        color: white;
+        position: fixed;
+        z-index: 100;
+        left: none;
+        top: none;
+        bottom: none;
+        right: none;
+        background-color: rgba(77, 77, 77, 0.863);
+        padding:.5rem;
+    }
+    
+    #skillsModalTitle{
+    border-bottom: solid black;
+    border-width: .5px;
+    padding: .2rem;
+    font-size: larger;
+    margin-bottom: .25rem
+    }
+    
+    #skillsModalSnippet{
+        border: bottom solid black;
+        border-width: .5px;
+        padding: .2rem;
+    
+    }
 }
 
 @media(min-width: 1280px) and (max-width:2657px){
@@ -202,9 +173,40 @@ margin-bottom: .25rem
 }
 
 @media(min-width: 601px) and (max-width: 1279){
+    .techSkillsContainer{
+        display: flex;
+        flex-flow: row wrap;
+        width: 95%;
+        margin:0 2.5%;
+        border: solid white;
+    }
 
 }
 
 @media(min-width: 200px) and (max-width:600px){
+    .skillListWithModal{
+        display: flex;
+        flex-flow: column nowrap;
+        border: solid lightblue 1px;
+        border-radius: 5px;
+        height: max-content;
+        justify-content: center;
+    }
+    .skillsListItem{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        width: 90%;
+        margin: 0 5%;
+        /* border: solid white 1px; */
+        top: 0;
+        transition: .2s ease-in-out;
 
+    }
+
+    .skillsListItem:hover{
+        position: relative;
+        color: skyblue;
+        bottom: 1%;
+    }
 }

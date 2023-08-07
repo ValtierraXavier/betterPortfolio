@@ -54,7 +54,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
         <div className ='modalWhatProject' id = 'modalWhatProgect' >Commenting on: {projectNameRef.current}</div>
       
           <form className ="commentForm" onSubmit = {handleMakeComment}>
-      
+            <p className = 'commentModalInputLabels' id="commentNameInputLabel">Name</p>
             <input 
               id = 'commentNameInput'
               className = 'commentInput'
@@ -64,7 +64,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
               value = {author}
               onChange={(e)=> setAuthor(prev => prev = e.target.value)}
             />
-
+            <p className = 'commentModalInputLabels' id = 'commentTextInputLabel'>Comment Text</p>
             <textarea 
               id='commentTextInput'
               className = 'commentInput'

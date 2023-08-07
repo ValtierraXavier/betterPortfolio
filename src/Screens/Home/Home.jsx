@@ -12,12 +12,11 @@ export default function Home(){
         "Hi! My name is Xavier!", 
         "Welcome to my Portfolio!",
         "I hope you'll like it here.", 
-        "Look at me! Im a dev!",
-        "Well...Hello there gorgeous",
-        "Hire me!!"
-
+        "This Portfolio makes API calls!",
+        "Drop some feedback on a project.",
+        "Lets get to work!"
     ]
-    const intervalTiming = (sentenceArr.length) * 4800
+    const intervalTiming = (sentenceArr.length) * 4500
     
     const spellSpeed = (ms)=>{
         return new Promise(
@@ -53,8 +52,9 @@ export default function Home(){
    
     return(
         <div className='pageContainer' id ='homePageContainer'>
-            <img src='https://i.imgur.com/sMWNJ4C.jpg' height={240} alt = 'self Portrait' className = 'iconDiv'></img>
-            <div className='typedBlurb' id='content1' >{word}</div>
+            <div className = 'blurbContainer' >
+                <div className='typedBlurb' id='content1' >{word}</div>
+            </div>
         </div>
     );
 }

@@ -78,45 +78,48 @@ const selectionSpeed = (ms) => {
   return new Promise(
     resolve => {setTimeout(()=>{resolve()}, ms)}
     )}
-const typingSpeed = (ms) => {
-  return new Promise(
-    resolve1 => {setTimeout(()=>{resolve1()}, ms)}
-    )}
-    
-const typeItOut = async () => {
-  let selection
-  let selection2
-  let sentence
-  let sentence2
-  let sentenceArr = []
-  let sentenceArr2 = []
-  for(let k = 0; k < pageContent.length; k++){
-    selection = pageContent[k]
-    for(let l = 0; l < selection.length || selection.length === undefined; l++){
-      if(k <= 4){
-        setTyped2(prev => prev = '')
-        await typingSpeed(5)
-        sentenceArr.push(selection[l])
-        sentence = sentenceArr.toString().replace(/,/g,"")
-        setTyped(prev => prev = sentence)
-      } 
-      if(k>=5){
-        selection2 = pageContent[k]  
-        await typingSpeed(5)
-        sentenceArr2.push(selection2[l])
-        sentence2 = sentenceArr2.toString().replace(/,/g,"")
-        setTyped2(prev => prev = sentence2)
+    const typingSpeed = (ms) => {
+      return new Promise(
+        resolve1 => {setTimeout(()=>{resolve1()}, ms)}
+        )}
+        
+        const typeItOut = async () => {
+          let selection
+          let selection2
+          let sentence
+          let sentence2
+          let sentenceArr = []
+          let sentenceArr2 = []
+          for(let k = 0; k < pageContent.length; k++){
+            selection = pageContent[k]
+            for(let l = 0; l < selection.length || selection.length === undefined; l++){
+              if(k <= 4){
+                setTyped2(prev => prev = '')
+                await typingSpeed(5)
+                sentenceArr.push(selection[l])
+                sentence = sentenceArr.toString().replace(/,/g,"")
+                setTyped(prev => prev = sentence)
+              } 
+              if(k>=5){
+                selection2 = pageContent[k]  
+                await typingSpeed(5)
+                sentenceArr2.push(selection2[l])
+                sentence2 = sentenceArr2.toString().replace(/,/g,"")
+                setTyped2(prev => prev = sentence2)
+              }
+            }
+            await selectionSpeed(120)
+            
+          }
         }
-    }
-    await selectionSpeed(120)
-    
-  }
-  }
-  const openModal =(el, rec) => {
-    skillThing.style.height = 'fit-content'
-    skillThing.style.left = `${(rec.left + 22)}px`
-    skillThing.style.top = `${(rec.top +55)}px`
-    skillThing.style.display = 'inline'
+        const openModal =(el, rec) => {
+          const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
+          const modalRect = skillThing.getBoundingClientRect()
+          skillThing.style.height = 'fit-content'
+          skillThing.style.left = `${(rec.left -50)}px`
+          skillThing.style.top = `${(rec.top +55)}px`
+          skillThing.style.display = 'inline'
+          
     if(el === 'HTML'){
       setSkillsModal(prev => prev = htmlModalInfo)
     }else if(el === 'CSS'){
@@ -165,8 +168,8 @@ const typeItOut = async () => {
       <div className ='aboutContentContainer'>
       {whoAmIArr.map((element, index)=> {
         return(
-            <h1
-              key={index} data-index = {index} className= 'whoami' id = 'aboutContent'>{element}
+            <h1 key={`wai${index}`} data-index = {index} className= 'whoami' id = 'aboutContent'>
+              {element}
             </h1>
         )
       })
@@ -180,22 +183,24 @@ const typeItOut = async () => {
     <div className = 'techSkillsContainer' >
       {techSkillsArr.map((element, index)=>{
         return(
-          <h1 key = {index} data-index = {index} className = 'techs' id = 'canUse'>{element}</h1>
+          <h1 key = {`cu${index}`} data-index = {index} className = 'techs' id = {`canUse${index}`}>{element}</h1>
         )
       })}
     </div>
       <div className='skillListWithModal'>
     {skillSet.map((element, index)=>{
       return(
-        <div key = {index} className = 'skillsListItem'  id = 'skillsList' onMouseEnter={highLight} onMouseLeave={unHighLight}>{element}</div>
+        <div key = {`sLMC${index}`} className = 'skillsListMapContainer'>
+          <div key = {`sLI${index}`} className = 'skillsListItem'  id = 'skillsList' onMouseEnter={highLight} onMouseLeave={unHighLight}>{element}</div>
+            <div key = {`sMW${index}`} className='skillsModalWindow' id = 'skillsModalWindow' >
+              <div key = {`sMT${index}`} className='skillsModalTitle' id = 'skillsModalTitle' >{skillsModal.title}</div>
+              <div key = {`sMS${index}`} className='skillsModalSnippet' id = 'skillsModalSnippet' >{skillsModal.snippet}</div>
+              <img key = {`sMI${index}`} height = '50px' src = {skillsModal.icon} className='skillsModalIcon' id = 'skillsModalIcon' ></img>
+            </div>
+        </div>
       )
     })
   }
-      <div className='skillsModalWindow' id = 'skillsModalWindow' >
-        <div className='skillsModalTitle' id = 'skillsModalTitle' >{skillsModal.title}</div>
-        <div className='skillsModalSnippet' id = 'skillsModalSnippet' >{skillsModal.snippet}</div>
-        <img height = '50px' src = {skillsModal.icon} className='skillsModalIcon' id = 'skillsModalIcon' ></img>
-      </div>
       </div>
     </div>
   )

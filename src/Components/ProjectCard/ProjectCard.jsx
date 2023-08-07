@@ -17,11 +17,11 @@ export default function ProjectCard({item}) {
         </a>
         <div className='listContainer'>
           <ul className='projectList'>
-            <li className='projectListItems'>{item.point1}</li>
+            <li key = 'pLI1' className='projectListItems'>{item.point1}</li>
             <br/>
-            <li className='projectListItems'>{item.point2}</li>
+            <li key = 'pLI2' className='projectListItems'>{item.point2}</li>
             <br/>
-            <li className='projectListItems'>{item.point3}</li>
+            <li key = 'pLI3' className='projectListItems'>{item.point3}</li>
             <br/>
           </ul>
         </div>

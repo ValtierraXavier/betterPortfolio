@@ -30,15 +30,15 @@ const projArr = [...proj]
         <div className = 'projectTitleContainer'>
           {projArr.map((element, index)=>{
             return(
-              <h1 className = 'projDivs' key = {index} data-index = {index} >{element}</h1>
+              <h1 className = 'projDivs' key = {`pD${index}`} data-index = {index} >{element}</h1>
             )
             })}
         </div>
         <div className='cardsDisplayArea'>
-        {projects.map((info)=> (
-            <div>
+        {projects.map((info, index)=> (
+            <div key = {`cCMD${index}`} className= 'cardContainterMapDiv'>
               <ProjectCard item = {info} key = {info._id} dataset = {info._id}/>
-              <div id = 'makeCommentButton' onClick = {openModal} className = 'makeComment' data-projectname = {info.projectName} data-parentid = {info._id} >Say something about this project</div>
+              <div key = {`mCB${index}`} id = 'makeCommentButton' onClick = {openModal} className = 'makeComment' data-projectname = {info.projectName} data-parentid = {info._id} >Say something about this project</div>
             </div>))
         }
         </div>

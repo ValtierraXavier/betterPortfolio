@@ -4,6 +4,7 @@ import Comments from './Components/Comments/Comments.jsx';
 // import Navbar from './Components/Navbar/Navbar.jsx';
 import About from './Screens/About/About.jsx';
 import Projects from './Screens/Projects/Projects.jsx';
+import ContactTab from './Components/ContactTab/ContactTab.jsx';
 import { useEffect, useRef, useState } from 'react';
 import { getAllData } from './Services/projectServices.js';
 import { getAllComments } from './Services/commentServices.js';
@@ -122,7 +123,7 @@ const sortComments = async () =>{
       <Home/>
       <About/>
       <Projects isLoading = {isLoading} sortByRef = {sortByRef} setComments={setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef} sortBy = {sortBy} setSortBy = {setSortBy} />
-      {/* <Comments projectNameRef={projectNameRef} isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setWhatProject={setWhatProject} setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/> */}
+      <ContactTab/>
     </div>
   );
 }

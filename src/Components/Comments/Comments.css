@@ -3,23 +3,40 @@
     display: flex;
     position:inherit;
     flex-flow: column nowrap;
-    width: 50%;
-    margin: 0% 25%;
+    width: 80vw;
+    margin: 0% 10%;
     border: solid lightblue 1px;
     border-radius: 5px ;
 }
+
 .commentLabelDiv{
     display: flex;
     flex-flow: row nowrap;
-    align-content: space-around;
-    justify-content: space-around;
-    height: 1.2rem;
-    width:100%;
+    width: 95%;
+    height: 2.2rem;
+    margin: 0 2.5%;
+    border-bottom: solid lightblue;
+}
+
+.labelContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 50%;
+    height: fit-content;
+    padding:1%;
+}
+
+.sortContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    height: fit-content;
+    width: 50%;
+    justify-content: space-evenly;
     padding: 1%;
 }
 
 .commentLabel{
-    margin:.5%;
     font-size: 1rem;
     font-weight: 800;
 }

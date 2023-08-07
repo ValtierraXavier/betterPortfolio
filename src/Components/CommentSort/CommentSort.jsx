@@ -9,13 +9,13 @@ export default function CommentSort({ sortBy, setSortBy, sortByRef, sortedBy, se
 
 
     return(
-        <div className = 'CommentsSort'>
+        <div className = 'CommentSort'>
             <label htmlFor = 'sortOptions'>Sort:</label>
 
             <select onChange = {sortingBy} id = 'sortOptions' name = 'sortOptions' >
                 <option >All</option>
                 {projects.map((element, index)=>(
-                    <option key = {index} >{element.projectName}</option>
+                    <option key = {`Opt${index}`} >{element.projectName}</option>
                 ))}
             </select>
         </div>

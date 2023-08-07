@@ -1,0 +1,158 @@
+.contactTabContainer{
+   height: fit-content;
+   width: 99vw;
+   margin: 0 .5vw;
+}
+
+
+.contactButton{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(0,0,0,.85);
+    position: fixed;
+    z-index: 400;
+    height: 2rem;
+    border-radius: 5px;
+    border: solid lightblue;
+    padding: 5px ;
+    top: 8vh;
+    right: 9%;
+    bottom: 12vh;
+    left:79%;
+    transition: ease-in-out .2s;
+    white-space: nowrap;
+    visibility:visible;
+}
+#formDiv{
+    visibility: hidden;
+    flex-flow: column nowrap;
+    height: 0px;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    color: rgba(0,0,0,0);
+    background: rgba(0,0,0,0);
+    transition: .2s ease-in-out;
+}
+
+.contactForm{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    background: rgba(0,0,0,0);
+    transition: .2s ease-in-out;
+}
+
+.contactTabContainer:hover > #formDiv{
+    z-index: 500;
+    color: rgba(0,0,0,1);
+    background: rgb(255, 255, 255);
+    border: solid rgb(255, 255, 255);
+    left: 800px;
+    height: 300px;
+    visibility: visible;
+}
+
+.contactTabContainer:hover > .contactForm{
+    color: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    border: solid rgba(0, 0, 0, 0);
+    left: 800px;
+    height: 300px;
+    visibility:hidden;
+}
+
+
+.emailFormLabels{
+    position: relative;
+    font-size: .6rem;
+    margin-bottom: .4rem;
+    left: 0;
+    transition: .2s ease-in-out;
+}
+
+#bodyFormLabel{
+    position:relative;
+    margin-top: 1rem;
+}
+
+.mailToLink{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    height: 1.4rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+    transition: .2s ease-in-out;
+}
+
+.mailToLink:hover{
+    background-color: lightblue;
+    color:black;
+}
+
+#bodyInput{
+    position: relative;
+    height: 5rem;
+    padding: 5px;
+    resize:none;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border: solid black 1px;
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+}
+
+#subjectInput{
+    position: relative;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    transition: .2s ease-in-out;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+#bodyInput:focus{
+    -webkit-appearance: none;
+    top: -5px;
+    left: -5px;    
+    outline: none;
+    box-shadow: darkgrey 5px 5px 5px;
+    border: solid lightblue 1px;
+}
+
+#subjectInput:focus{
+    -webkit-appearance: none;
+    top: -5px;
+    left: -5px;    
+    outline: none;
+    box-shadow: darkgrey 5px 5px 5px;
+    border: solid lightblue 1px;
+}
+
+@media(min-width: 2658px) and (max-width: 4253px){
+    
+}
+
+@media(min-width: 1280px) and (max-width:2657px){
+
+}
+
+@media(min-width: 601px) and (max-width: 1279px){
+    .contactButton{
+        left: 73%;
+    }
+}
+
+@media(min-width: 200px) and (max-width:600px){
+   
+}
