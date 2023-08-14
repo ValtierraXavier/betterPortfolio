@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './ContactTab.css'
-
+import Resume from '../../Assets/XaviersResume.pdf'
 
 export default function ContactTab() {
     const[mailTo, setMailTo] = useState('mailto:xavier.valtierra@icloud.com')
@@ -44,6 +44,7 @@ export default function ContactTab() {
                 <textarea name ='body' onChange={(e)=> setEmailBody(prev => prev = e.target.value)} value ={emailBody} className = 'emailInput' id = 'bodyInput' type='text'></textarea>
                 <a className='mailToLink' onClick={handleUrlEncode} href = {`${mailTo}`} >Send Email!</a>
             </form>
+            <a href = {Resume} target='_blank' rel = 'noreferrer' className='resumeButton'>Show Resume</a>
         </div>
     </div>
   )
