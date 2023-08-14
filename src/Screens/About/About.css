@@ -4,6 +4,7 @@
     width: 100vw;
     height: fit-content;
     color: white;
+    padding-top: 2vh;
 }
 
 .aboutMe{
@@ -23,7 +24,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content:space-around;
-    border: solid lightblue;
+    border: solid lightblue 1px;
+    border-radius: 5px;
     height: auto;
     width: 75%;
     margin: 0 12.5%;
@@ -208,5 +210,9 @@ margin-bottom: .25rem
         position: relative;
         color: skyblue;
         bottom: 1%;
+    }
+    .whoami{
+        position: relative;
+        top: 4vh;
     }
 }
