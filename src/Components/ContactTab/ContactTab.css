@@ -200,9 +200,9 @@
 @media(min-width: 1280px) and (max-width:2657px){
     #toggleContact:checked ~ #formDiv{
         left: 60vw;
-        height: 650px;
+        height: 500px;
         visibility: visible;
-        top: 13vh;
+        top: 11vh;
         font-size:2rem;
     }
 
