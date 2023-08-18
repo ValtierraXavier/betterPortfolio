@@ -21,7 +21,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
     
     const closeModal =()=>{
       const addBackground = document.getElementById('modalBackground')
-      addBackground.style.display= 'none'
+      addBackground.style.visibility= 'hidden'
       setAuthor(prev => prev = "")
       setCommentText(prev => prev = "")
       setWhatProject(prev => prev = "")
@@ -51,7 +51,7 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
       
       <div className = 'modalBackground' id = 'modalBackground'>
       
-        <div className ='modalWhatProject' id = 'modalWhatProgect' >Commenting on: {projectNameRef.current}</div>
+      <div className ='modalWhatProject' id = 'modalWhatProgect' >Commenting on: {projectNameRef.current}</div>
       
           <form className ="commentForm" onSubmit = {handleMakeComment}>
             <p className = 'commentModalInputLabels' id="commentNameInputLabel">Name</p>
@@ -59,7 +59,6 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
               id = 'commentNameInput'
               className = 'commentInput'
               type ="text" 
-              placeholder ="Name"
               required = 'required'
               value = {author}
               onChange={(e)=> setAuthor(prev => prev = e.target.value)}
@@ -69,7 +68,6 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
               id='commentTextInput'
               className = 'commentInput'
               type ="text" 
-              placeholder ="Comment"
               required = 'required'
               value= {commentText}
               onChange = {(e) => setCommentText(prev => prev = e.target.value)}

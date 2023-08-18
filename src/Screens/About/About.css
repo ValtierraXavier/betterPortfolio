@@ -18,6 +18,7 @@
     height: fit-content;
     margin: .2rem;
     color: white;
+    transition: .2s ease-in;
 }
 
 .skillListWithModal{
@@ -180,7 +181,6 @@ margin-bottom: .25rem
         flex-flow: row wrap;
         width: 95%;
         margin:0 2.5%;
-        border: solid white;
     }
 
     #skillsModalWindow{
@@ -199,6 +199,10 @@ margin-bottom: .25rem
 }
 
 @media(min-width: 200px) and (max-width:600px){
+    .aboutMe{
+        font-size: 1rem;
+    }
+
     .skillListWithModal{
         display: flex;
         flex-flow: column nowrap;
@@ -213,8 +217,8 @@ margin-bottom: .25rem
         justify-content: center;
         width: 90%;
         margin: 0 5%;
-        /* border: solid white 1px; */
         top: 0;
+        font-size: 1rem;
         transition: .2s ease-in-out;
 
     }

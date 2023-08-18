@@ -57,5 +57,8 @@
 }
 
 @media(min-width: 200px) and (max-width:600px){
-
+    .listContainer{
+        font-size:.7rem;
+        overflow-y: auto;
+    }
 }

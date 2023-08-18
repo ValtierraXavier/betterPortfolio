@@ -2,11 +2,9 @@
     display: flex;
     flex-flow: row nowrap;
     position: relative;
-    color:white;
     width:fit-content;
     font-size: 1rem;
     justify-content: center;
-    width: 100%
 }
 
 #sortOptions{
@@ -14,15 +12,20 @@
 }
 
 
-@media(min-width: 200px) and (max-width: 799px){
-    .CommentsSort{
+@media(min-width: 200px) and (max-width: 600px){
+    #sortOptions{
         display: flex;
         position: relative;
-        color: white;
-        font-size: 1rem;
-        width: 25%;
-        right:4%
+        font-size: .5rem;
+        width: 95%;
+        right:4%;
+        text-align: center;
     }
+
+    .CommentSort > label{
+        font-size: .7rem;
+    }
+
 }
 
 @media(min-width: 2658px) and (max-width: 4253px){
@@ -33,10 +36,6 @@
 
 }
 
-@media(min-width: 601px) and (max-width: 1279){
-
-}
-
-@media(min-width: 200px) and (max-width:600px){
+@media(min-width: 601px) and (max-width: 1279px){
 
 }

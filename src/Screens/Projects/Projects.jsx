@@ -8,8 +8,7 @@ const [whatProject, setWhatProject] = useState('')
 
 const openModal = (e) =>{
   const addBackground = document.getElementById('modalBackground')
-  addBackground.style.transition = 'ease-in-out .4s'
-  addBackground.style.display = "flex"
+  addBackground.style.visibility = "visible"
   projectNameRef.current = (e.target.dataset.projectname)
   setWhatProject(prev => prev = projectNameRef.current)
 }

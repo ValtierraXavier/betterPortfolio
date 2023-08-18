@@ -13,9 +13,9 @@ export default function CommentSort({ sortBy, setSortBy, sortByRef, sortedBy, se
             <label htmlFor = 'sortOptions'>Sort:</label>
 
             <select onChange = {sortingBy} id = 'sortOptions' name = 'sortOptions' >
-                <option >All</option>
+                <option className ="option all" >All</option>
                 {projects.map((element, index)=>(
-                    <option key = {`Opt${index}`} >{element.projectName}</option>
+                    <option className = "option mapped" key = {`Opt${index}`} >{element.projectName}</option>
                 ))}
             </select>
         </div>

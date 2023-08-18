@@ -4,34 +4,35 @@
     position:inherit;
     flex-flow: column nowrap;
     width: 80vw;
-    margin: 0% 10%;
+    margin: 0% 10vw;
     border: solid lightblue 1px;
     border-radius: 5px ;
 }
 
 .commentLabelDiv{
     display: flex;
-    flex-flow: row nowrap;
-    width: 95%;
-    height: 2.2rem;
-    margin: 0 2.5%;
-    border-bottom: solid lightblue;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    height: 2.5rem;
+    border-bottom: solid lightblue 1px;
 }
 
 .labelContainer{
     display: flex;
     position: relative;
     align-items: center;
-    width: 50%;
+    width: 45%;
     height: fit-content;
     padding:1%;
 }
 
 .sortContainer{
     display: flex;
+    position: relative;
     flex-flow: row nowrap;
     height: fit-content;
-    width: 50%;
+    width: fit-content;
     justify-content: space-evenly;
     padding: 1%;
 }
@@ -121,10 +122,6 @@
     font-size: small;
     font-weight: 300;
 }
-.CommentsSort{
-    align-self: center;
-    font-size: x-large;
-}
 
 @media(min-width: 2658px) and (max-width: 4253px){
 
@@ -144,19 +141,19 @@
         position: relative;
         flex-flow: row nowrap;
         align-content: space-around;
-        justify-content: space-between;
+        justify-content: center;
         height: fit-content;
         padding: 2%;
-        width: 100%;
-        margin: 0;
+        width: 96%;
     }
     .comments{
        width:98%;
        margin:0 1%;
+       font-size: .7rem
     }
-    
-    #sortOptions {
-        width: 100%;
+
+    .commentLabel{
+        font-size: .7rem;
     }
 }
 
