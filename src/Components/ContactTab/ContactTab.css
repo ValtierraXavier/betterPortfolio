@@ -215,6 +215,7 @@
     .contactButton{
         left: 75vw;
         right: 5vw;
+        top: 5vw;
     }
 
     #toggleContact:checked ~ #formDiv{
@@ -223,9 +224,9 @@
         background: rgb(255, 255, 255);
         left: 49vw;
         width: 45vw;
-        height: 500px;
+        height: 300px;
         visibility: visible;
-        top: 17vh;
+        top: 7vh;
     }
     
 }
