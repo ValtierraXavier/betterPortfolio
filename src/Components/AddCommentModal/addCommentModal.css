@@ -139,12 +139,13 @@
     .modalBackground{
         position: fixed;
         width: 90%;
-        height: 90%;
+        height: 70%;
         margin: 0 4% 0 2.7%;
     }
 
     .modalWhatProject{
-        font-size: 1.2rem;
+        font-size: .7rem;
+        font-weight: 600;
     }
 }
 

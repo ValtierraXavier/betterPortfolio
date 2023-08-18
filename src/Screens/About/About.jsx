@@ -116,7 +116,7 @@ const selectionSpeed = (ms) => {
           const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
           const modalRect = skillThing.getBoundingClientRect()
           skillThing.style.height = 'fit-content'
-          skillThing.style.left = `${(rec.left -23)}px`
+          skillThing.style.left = `${(rec.left -53)}px`
           skillThing.style.top = `${(rec.bottom)}px`
           skillThing.style.display = 'inline'
           
