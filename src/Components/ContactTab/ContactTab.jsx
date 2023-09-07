@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './ContactTab.css'
-import Resume from '../../Assets/XaviersResume.pdf'
+import Resume from '../../Assets/XaviersResume2023.pdf'
 
 export default function ContactTab() {
     const[mailTo, setMailTo] = useState('mailto:xavier.valtierra@icloud.com')
