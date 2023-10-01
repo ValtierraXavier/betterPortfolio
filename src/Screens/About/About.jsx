@@ -104,7 +104,7 @@ const openModal =(el, rec) => {
   const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
   const modalRect = skillThing.getBoundingClientRect()
   skillThing.style.height = 'fit-content'
-  skillThing.style.left = `${(rec.left -53)}px`
+  skillThing.style.left = `${(rec.left -37)}px`
   skillThing.style.top = `${(rec.bottom)}px`
   skillThing.style.display = 'inline'
   //Finds an object by title and sets the modal data to that object.

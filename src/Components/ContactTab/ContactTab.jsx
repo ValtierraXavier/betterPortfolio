@@ -10,6 +10,9 @@ export default function ContactTab() {
     const[domLoaded, setDomLoaded]=useState(false)
     
     window.onload = ()=>{setDomLoaded(prev => prev = true)}
+    window.onscroll= ()=>{
+        moveContactButton()
+    }
     
     const handleUrlEncode =()=>{
         const urlEncodedBody = emailBody.replaceAll(' ', '%20')
@@ -31,19 +34,15 @@ export default function ContactTab() {
     }
     
 
-    const moveContactButton =()=>{
-        const scrollPos = window.visualViewport
+    const moveContactButton = async ()=>{
+        const scrollPos =  window.visualViewport
         const contactButton = document.getElementById('contactButton')
-        if(scrollPos.pageTop >= 44 && scrollPos.width < 601){
+        if(domLoaded && scrollPos.pageTop >= 44 && scrollPos.width<500){
             contactButton.style.top = '5px'
-        }else if(scrollPos.pageTop < 44 && scrollPos.width < 601){
+        }else if(domLoaded && scrollPos.pageTop < 44 && scrollPos.width<500){
             contactButton.style.top = '45px'
         }
-    }        
-    if(domLoaded===true){
-        moveContactButton()
     }
-
     
   return (
     
