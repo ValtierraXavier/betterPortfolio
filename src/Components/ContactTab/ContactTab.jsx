@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './ContactTab.css'
 import Resume from '../../Assets/XaviersResume2023.pdf'
 
@@ -7,6 +7,9 @@ export default function ContactTab() {
     const[emailBody, setEmailBody] = useState('')
     const[emailSubject, setEmailSubject] = useState('')
     const[buttonToggle, setButtonToggle] = useState('Contact Me')
+    const[domLoaded, setDomLoaded]=useState(false)
+    
+    window.onload = ()=>{setDomLoaded(prev => prev = true)}
     
     const handleUrlEncode =()=>{
         const urlEncodedBody = emailBody.replaceAll(' ', '%20')
@@ -27,14 +30,28 @@ export default function ContactTab() {
         }
     }
     
+
+    const moveContactButton =()=>{
+        const scrollPos = window.visualViewport
+        const contactButton = document.getElementById('contactButton')
+        if(scrollPos.pageTop >= 44 && scrollPos.width < 601){
+            contactButton.style.top = '5px'
+        }else if(scrollPos.pageTop < 44 && scrollPos.width < 601){
+            contactButton.style.top = '45px'
+        }
+    }        
+    if(domLoaded===true){
+        moveContactButton()
+    }
+
     
   return (
     
     <div className = 'contactTabContainer'> 
-        <label className = 'contactButton' id = "contactButton" for='toggleContact' onClick={toggleButtonText}>{buttonToggle}</label>  
+        <label className = 'contactButton' id = "contactButton" htmlFor='toggleContact' onClick={toggleButtonText}>{buttonToggle}</label>  
         <input type='checkbox' id = 'toggleContact'></input>
         <div className = 'contactButton' id = 'formDiv'>
-            <h3 className = 'contactFormTitle'>Send me an Email</h3>
+            <h4 className = 'contactFormTitle'>Send me an Email</h4>
             <form action={mailTo}  method = 'get' encType='plain/text' className = 'contactForm'>
                 <p id = 'subjectFormLabel' className = 'emailFormLabels'>Subject</p>
                 <input name='subject' onChange={(e)=> setEmailSubject(prev => prev = e.target.value)} value ={emailSubject} className = 'emailInput' id = 'subjectInput' type='text'></input>

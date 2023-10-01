@@ -1,12 +1,10 @@
 import './CommentSort.css'
 
-export default function CommentSort({ sortBy, setSortBy, sortByRef, sortedBy, setSortedBy, projects, comments, setComments }) {    
-
+export default function CommentSort({ setSortBy, projects }) {    
 
     const sortingBy = async (e) => {
         setSortBy(prev => prev = e.target.value)
     }
-
 
     return(
         <div className = 'CommentSort'>

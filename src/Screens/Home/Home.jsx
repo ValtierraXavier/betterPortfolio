@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import ContactTab from '../../Components/ContactTab/ContactTab.jsx';
 import './Home.css';
 
 export default function Home(){
 
-    const [word, setWord] = useState('')
-    let sentence;
+    const [word, setWord] = useState()
+    let sentence = '';
     let speed = 50
-    let spelledWord = ""
-    const sentenceArr = [
-        
-        "Hi! My name is Xavier!", 
+    const sentenceArr = [        
+        "Hi! I'm Xavier", 
         "Welcome to my Portfolio!",
         "I hope you'll like it here.", 
         "This Portfolio makes API calls!",
         "Drop some feedback on a project.",
         "Lets get to work!"
     ]
-    const intervalTiming = (sentenceArr.length) * 4500
+    const intervalTiming = (sentenceArr.length) * 3400
     
     const spellSpeed = (ms)=>{
         return new Promise(
@@ -27,23 +26,28 @@ export default function Home(){
             resolve => {setTimeout(()=>{resolve('')}, ms)}
             )}
     
-
             
-    const spellIt = async (words) => {
-        let spelledWordArr = []
-        for(let i = 0; i < words.length; i++){
-            sentence = words[i]
-            for(let j = 0; j < sentence.length; j++){
+            
+    const spellIt = async (sentArr) => {
+        
+        if(document.visibilityState==='visible'){
+            for(let i= 0; i<sentArr.length ;i++){
+            sentence = sentArr[i].split("")
+            let spelt = ''
+            for(let j=0;j <sentence.length; j++) {
+                const letter = sentence[j]
                 await spellSpeed(speed)
-                spelledWordArr.push(sentence[j])
-                spelledWord = spelledWordArr.toString().replace(/,/g,"")
-                setWord(prev => prev = spelledWord )
+                spelt += letter
+                setWord(prev => prev = spelt)
             }
-            await selectSpeed(2000)
-            spelledWordArr=[]
+            await selectSpeed(2000)        
+        }}else if(document.visibilityState==='hidden'){
+            setWord(prev => prev = '')
+            return
         }
     }
     
+
     useEffect(()=>{
         spellIt(sentenceArr)
         setInterval(()=> {spellIt(sentenceArr)},intervalTiming)
@@ -55,6 +59,7 @@ export default function Home(){
             <div className = 'blurbContainer' >
                 <div className='typedBlurb' id='content1' >{word}</div>
             </div>
+            <ContactTab/>
         </div>
     );
 }

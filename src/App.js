@@ -1,7 +1,5 @@
 import './App.css';
 import Home from "./Screens/Home/Home.jsx";
-import Comments from './Components/Comments/Comments.jsx';
-// import Navbar from './Components/Navbar/Navbar.jsx';
 import About from './Screens/About/About.jsx';
 import Projects from './Screens/Projects/Projects.jsx';
 import ContactTab from './Components/ContactTab/ContactTab.jsx';
@@ -12,18 +10,26 @@ import { getAllComments } from './Services/commentServices.js';
 function App() {
 
   const[isLoading, setIsLoding] = useState(true)
-  const[comments, setComments] = useState([])
-  const[projects, setProjects] = useState([])
-  const[sortedComments, setSortedComments] = useState([])
-  const[loadProjects, setLoadProjects] = useState(true)
   const[loadComments, setLoadComments] = useState(false)
-  const[sortBy, setSortBy] = useState('All')
+  const[loadProjects, setLoadProjects] = useState(true)
+  const[projects, setProjects] = useState([])
   const projectNameRef = useRef('')
+  const[comments, setComments] = useState([])
+  const[sortedComments, setSortedComments] = useState([])
+  const[sortBy, setSortBy] = useState('All')
   const sortByRef = useRef('All')
   const techs = document.getElementsByClassName(`techs`)
   const whoami = document.getElementsByClassName(`whoami`)
   const projDivs = document.getElementsByClassName(`projDivs`)
   
+  useEffect(()=>{
+    setTimeout(()=>{
+      sequentialHighlight(techs);
+      sequentialHighlight(whoami);
+      sequentialHighlight(projDivs);
+    },500)
+  },[])
+
   useEffect(()=>{
     if(loadProjects){
       getProjectData()
@@ -34,9 +40,6 @@ function App() {
     if(sortBy !== 'All'){
         sortComments()
       }
-    sequentialHighlight(techs)
-    sequentialHighlight(whoami)
-    sequentialHighlight(projDivs)
     },[loadProjects, loadComments, sortBy])
   
 const prom = async (ms)=>{
@@ -51,24 +54,20 @@ const prom2 = async (ms)=>{
 }
 
 const sequentialHighlight = async (el)=>{
-  const restartTiming = el.length * 200
+  const restartTiming = el.length * 500
   await prom(restartTiming)
-    for(let j = 0; j < el.length; j++){
-      
-      if(j == el[j].dataset.index){
-        await prom(60)
-        el[j].style.color = 'rgb(57, 57, 57)'
-        el[j].style.transition = 'ease-in-out .2s'
-      } if (j === 3 ){
-        sequentialUnhighlight(el)
-      }     
-    }
+  for(let j = 0; j < el.length; j++){      
+    await prom(60)
+    el[j].style.color = 'rgb(57, 57, 57)'
+    el[j].style.transition = 'ease-in-out .2s'
+    if (j === 3 ){
+      sequentialUnhighlight(el)
+    }     
+  }
 }
 
 const sequentialUnhighlight = async(el) =>{
-
-    for(let i = 0; i < el.length; i++){
-      
+    for(let i = 0; i < el.length; i++){      
       if(el[i].dataset.index == i){
         await prom2(60)
         el[i].style.color = 'white'
@@ -119,11 +118,10 @@ const sortComments = async () =>{
 
   return (
     <div className = 'App'>
-      {/* <Navbar/> */}
       <Home/>
       <About/>
       <Projects isLoading = {isLoading} sortByRef = {sortByRef} setComments={setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef} sortBy = {sortBy} setSortBy = {setSortBy} />
-      <ContactTab/>
+      {/* <ContactTab/> */}
     </div>
   );
 }

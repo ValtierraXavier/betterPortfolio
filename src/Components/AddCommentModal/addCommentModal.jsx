@@ -42,7 +42,6 @@ export default function AddCommentModal({ isLoading, sortBy, setSortBy, sortByRe
         closeModal()
         setWhatProject(prev => prev = "")
         setTimeout(scrollToBottom, 10)
-        setTimeout()
       }catch(error){console.log(error)}
     }
 

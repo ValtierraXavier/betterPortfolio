@@ -1,9 +1,9 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useState } from 'react'
 import './Projects.css'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard.jsx'
 import Comments from '../../Components/Comments/Comments.jsx'
 
-export default function Projects({ isLoading, sortByRef, setComments, comments, setLoadComments, projects, setProjects, projectNameRef, setLoadProjects, sortBy, setSortBy }) {
+export default function Projects({ isLoading, sortByRef, setComments, comments, setLoadComments, projects, projectNameRef, sortBy, setSortBy }) {
 const [whatProject, setWhatProject] = useState('')
 
 const openModal = (e) =>{
@@ -13,9 +13,7 @@ const openModal = (e) =>{
   setWhatProject(prev => prev = projectNameRef.current)
 }
 
-const proj = 'Projects'
-const projArr = [...proj]
-
+const proj = 'Projects'.split('')
 
   return (
     <div className='projectPageContainer' id='projectPageContainer'>
@@ -27,7 +25,7 @@ const projArr = [...proj]
       :
       <div>
         <div className = 'projectTitleContainer'>
-          {projArr.map((element, index)=>{
+          {proj.map((element, index)=>{
             return(
               <h1 className = 'projDivs' key = {`pD${index}`} data-index = {index} >{element}</h1>
             )

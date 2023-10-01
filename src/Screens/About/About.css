@@ -203,6 +203,14 @@ margin-bottom: .25rem
         font-size: 1rem;
     }
 
+    .whoami{
+        font-size: 1.2rem;
+    }
+
+    .techs{
+        font-size: 1.2rem;
+    }
+
     .skillListWithModal{
         display: flex;
         flex-flow: column nowrap;

@@ -9,10 +9,8 @@
     height: 2rem;
     border-radius: 5px;
     padding: 5px ;
-    top: 7vh;
-    right: 9vw;
-    bottom: 12vh;
-    left:79vw;
+    top: 20px;
+    right: 100px;
     transition: ease-in-out .2s;
     white-space: nowrap;
     font-weight: 600;
@@ -53,7 +51,7 @@
     background: rgba(255, 255, 255, 1);
     border: solid rgb(255, 255, 255, 1);
     left: 70vw;
-    height: 400px;
+    height: 300px;
     visibility: visible;
     top: 15vh;
 }
@@ -188,7 +186,7 @@
         left: 60vw;
         height: 650px;
         visibility: visible;
-        top: 13vh;
+        top: 75px;
         font-size:2rem;
     }
 
@@ -198,11 +196,15 @@
 }
 
 @media(min-width: 1280px) and (max-width:2657px){
+    .contactButton{
+        top:22px;
+    }
+
     #toggleContact:checked ~ #formDiv{
         left: 60vw;
-        height: 500px;
+        height: 400px;
         visibility: visible;
-        top: 11vh;
+        top: 75px;
         font-size:2rem;
     }
 
@@ -215,7 +217,7 @@
     .contactButton{
         left: 75vw;
         right: 5vw;
-        top: 5vw;
+        top: 35px;
     }
 
     #toggleContact:checked ~ #formDiv{
@@ -226,7 +228,7 @@
         width: 45vw;
         height: 300px;
         visibility: visible;
-        top: 7vh;
+        top: 75px;
     }
     
 }
@@ -234,7 +236,8 @@
 @media(min-width: 200px) and (max-width:600px){
     .contactButton{
         right: 5vw;
-        left: 5vw
+        left: 5vw;
+        top: 45px;
     }
 
     #toggleContact:checked ~ #formDiv{
