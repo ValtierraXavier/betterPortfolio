@@ -7,13 +7,13 @@ export default function ContactTab() {
     const[emailBody, setEmailBody] = useState('')
     const[emailSubject, setEmailSubject] = useState('')
     const[buttonToggle, setButtonToggle] = useState('Contact Me')
-    const[domLoaded, setDomLoaded]=useState(false)
-    
-    window.onload = ()=>{setDomLoaded(prev => prev = true)}
+   
+    //detects scroll and executes function
     window.onscroll= ()=>{
         moveContactButton()
     }
     
+    //encode url for mailto email handling
     const handleUrlEncode =()=>{
         const urlEncodedBody = emailBody.replaceAll(' ', '%20')
         setMailTo(prev=>prev = `mailto:xavier.valtierra@icloud.com?subject=${emailSubject}&body=${urlEncodedBody}`)
@@ -33,13 +33,13 @@ export default function ContactTab() {
         }
     }
     
-
+    // moves the contact tab to the top of the page when at the top.
     const moveContactButton = async ()=>{
-        const scrollPos =  window.visualViewport
         const contactButton = document.getElementById('contactButton')
-        if(domLoaded && scrollPos.pageTop >= 44 && scrollPos.width<500){
+        const scrollPos =  window.visualViewport
+        if(scrollPos.pageTop >= 44 && scrollPos.width<500){
             contactButton.style.top = '5px'
-        }else if(domLoaded && scrollPos.pageTop < 44 && scrollPos.width<500){
+        }else if(scrollPos.pageTop < 44 && scrollPos.width<500){
             contactButton.style.top = '45px'
         }
     }
