@@ -2,22 +2,16 @@ import './App.css';
 import Home from "./Screens/Home/Home.jsx";
 import About from './Screens/About/About.jsx';
 import Projects from './Screens/Projects/Projects.jsx';
-import ContactTab from './Components/ContactTab/ContactTab.jsx';
 import { useEffect, useRef, useState } from 'react';
 import { getAllData } from './Services/projectServices.js';
-import { getAllComments } from './Services/commentServices.js';
 
 function App() {
 
   const[isLoading, setIsLoding] = useState(true)
-  const[loadComments, setLoadComments] = useState(false)
   const[loadProjects, setLoadProjects] = useState(true)
   const[projects, setProjects] = useState([])
   const projectNameRef = useRef('')
-  const[comments, setComments] = useState([])
-  const[sortedComments, setSortedComments] = useState([])
-  const[sortBy, setSortBy] = useState('All')
-  const sortByRef = useRef('All')
+  
   const techs = document.getElementsByClassName(`techs`)
   const whoami = document.getElementsByClassName(`whoami`)
   const projDivs = document.getElementsByClassName(`projDivs`)
@@ -34,13 +28,7 @@ function App() {
     if(loadProjects){
       getProjectData()
       }
-    if(loadComments || sortBy === "All"){
-      setTimeout(getComments,50)
-      }
-    if(sortBy !== 'All'){
-        sortComments()
-      }
-    },[loadProjects, loadComments, sortBy])
+    }, [loadProjects])
   
 const prom = async (ms)=>{
   return new Promise((resolve2)=>{
@@ -87,41 +75,12 @@ const getProjectData = async () => {
       }else{setLoadProjects(prev =>prev=true)}
       }catch(error){console.log('error')}
 }
-    
-const getComments = async () =>{
-  try{
-    if(sortBy === "All"){
-      const commentData = await getAllComments()
-      if(commentData.data){
-        setComments(prev => prev = commentData.data)
-        setSortedComments(prev => prev = commentData.data)
-        setLoadComments(prev => prev = false)
-        setIsLoding(prev=> prev = false)
-      }else{setLoadComments(prev =>prev=true)}
-    }
-    
-  }catch(error){console.log(error)}
-}
-const sortComments = async () =>{
-      let filteredArray = []
-        sortedComments.forEach((comment)=>{
-        let filteredBy = comment.whatProject
-        if(sortBy === filteredBy){
-          filteredArray.push(comment)
-          setComments(prev => prev = filteredArray)
-          filteredBy = ''
-        }
-        else{return}
-      })
-}
-  
 
   return (
     <div className = 'App'>
       <Home/>
       <About/>
-      <Projects isLoading = {isLoading} sortByRef = {sortByRef} setComments={setComments} comments = {comments} setLoadComments={setLoadComments} setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef} sortBy = {sortBy} setSortBy = {setSortBy} />
-      {/* <ContactTab/> */}
+      <Projects isLoading = {isLoading}  setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef}/>
     </div>
   );
 }

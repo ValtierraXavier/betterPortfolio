@@ -3,6 +3,7 @@ import './About.css'
 
 
 export default function About() {
+//content to 'type out' line by line. 
 const pageContent = [
   "   I am a full (MERN) stack developer dedicated to bringing your website visions to reality.", 
   "  I am very fluent in HTML CSS and JAVASCRIPT and I use REACT and Express to bring it all together.",
@@ -12,7 +13,8 @@ const pageContent = [
   "  Shoot me an Email. I would love to hear from you!"
 ]
 
-const skillSet=
+//skillset dataset for the skillsModal. 
+const skillSet =
 [{
   title: "HTML",
   snippet:'The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.',
@@ -62,45 +64,50 @@ const skillSet=
 const [typed, setTyped] = useState("")
 const [skillsModal, setSkillsModal] =  useState({})
 const skillThing = document.getElementById('skillsModalWindow') 
-const whoAmI = "Who Am I".split("")
+const whoAmI = [..."Who Am I"]
 const techSkills = [..."Technical Skills"]
 
 
-
-
+//sets the timing for the snetence selection using a promise
 const selectionSpeed = (ms) => {
   return new Promise(
     resolve => {setTimeout(()=>{resolve()}, ms)}
-  )}
+   )}
+    
+//sets the timing for speed of the typing using a promise
 const typingSpeed = (ms) => {
   return new Promise(
     resolve1 => {setTimeout(()=>{resolve1()}, ms)}
   )}
+
+//timing for the fake cursor to blink.
 const blinker = (ms) => {
   return new Promise(
     resolve1 => {setTimeout(()=>{resolve1()}, ms)}
   )}
-        
+
+// selects a sentence from pageContent, splits it, then iterates through each character. Displays as a typing effect.     
 const typeItOut = async () => {
   let selection
   let sentence
   let typt =''
+  // iterates through pageContent and sets selection to the current sentence
   for(let k = 0; k < pageContent.length; k++){
     selection = pageContent[k]
+    // iterates through each character of the selected sentence and appends it to typt to create the typing effect.
     for(let l = 0; l < selection.length; l++){
         await typingSpeed(10)
         sentence = selection.split('')
         typt += sentence[l]
         setTyped(prev => prev = typt)
     }
-    await selectionSpeed(120)
-    
+    await selectionSpeed(120)    
   }
 }
 
 //Opens SkillSetModal with referenced data triggered by mouseEnter
 const openModal =(el, rec) => {
-  //used to find outter dimensions of element to render skills modal within viewport WIP
+  //used to find outter dimensions of element to render skills modal within viewport (WIP)
   const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
   const modalRect = skillThing.getBoundingClientRect()
   skillThing.style.height = 'fit-content'
@@ -118,11 +125,13 @@ const closeModal = async () => {
   setSkillsModal(prev => prev = {})
 }
 
+// highlights the skill then sets the paramters for opening the modal directly under the skill.
 function highLight(e){
   const value = (e.target.innerHTML)
   const rect = e.target.getBoundingClientRect()
   openModal(value, rect)
 }
+//closes the modal
   function unHighLight(e){
   closeModal()
 }

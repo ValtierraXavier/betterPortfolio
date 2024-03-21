@@ -1,17 +1,8 @@
 import React,{ useState } from 'react'
 import './Projects.css'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard.jsx'
-import Comments from '../../Components/Comments/Comments.jsx'
 
-export default function Projects({ isLoading, sortByRef, setComments, comments, setLoadComments, projects, projectNameRef, sortBy, setSortBy }) {
-const [whatProject, setWhatProject] = useState('')
-
-const openModal = (e) =>{
-  const addBackground = document.getElementById('modalBackground')
-  addBackground.style.visibility = "visible"
-  projectNameRef.current = (e.target.dataset.projectname)
-  setWhatProject(prev => prev = projectNameRef.current)
-}
+export default function Projects({ isLoading, projects}) {
 
 const proj = 'Projects'.split('')
 
@@ -35,12 +26,9 @@ const proj = 'Projects'.split('')
         {projects.map((info, index)=> (
             <div key = {`cCMD${index}`} className= 'cardContainterMapDiv'>
               <ProjectCard item = {info} key = {info._id} dataset = {info._id}/>
-              <div key = {`mCB${index}`} id = 'makeCommentButton' onClick = {openModal} className = 'makeComment' data-projectname = {info.projectName} data-parentid = {info._id} >Say something about this project</div>
             </div>))
         }
         </div>
-          <hr className = 'commentDivider'></hr>
-          <Comments projectNameRef={projectNameRef} isLoading = {isLoading} sortBy = {sortBy} setSortBy = {setSortBy} sortByRef = {sortByRef} projects = {projects} whatProject = { whatProject } setWhatProject={setWhatProject} setComments ={ setComments } comments = { comments } setLoadComments = { setLoadComments }/>
       </div>
       }
       

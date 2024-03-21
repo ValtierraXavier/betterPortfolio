@@ -19,12 +19,13 @@ export default function ContactTab() {
         setMailTo(prev=>prev = `mailto:xavier.valtierra@icloud.com?subject=${emailSubject}&body=${urlEncodedBody}`)
         handleClearInputs()
     };
-
+    // clear inputs after submit.
     const handleClearInputs =()=>{
         setEmailSubject(prev => prev = '')
         setEmailBody(prev => prev = '')
     }
     
+    //toggles "contact me" button to a close modal button or vice-versa
     const toggleButtonText = ()=>{
         if(buttonToggle === 'Contact Me'){
             setButtonToggle(prev=>prev='Close')
@@ -47,16 +48,16 @@ export default function ContactTab() {
   return (
     
     <div className = 'contactTabContainer'> 
-        <label className = 'contactButton' id = "contactButton" htmlFor='toggleContact' onClick={toggleButtonText}>{buttonToggle}</label>  
-        <input type='checkbox' id = 'toggleContact'></input>
+        <label className = 'contactButton' id = "contactButton" htmlFor = 'toggleContact' onClick={toggleButtonText}>{buttonToggle}</label>  
+        <input type = 'checkbox' id = 'toggleContact'></input>
         <div className = 'contactButton' id = 'formDiv'>
             <h4 className = 'contactFormTitle'>Send me an Email</h4>
-            <form action={mailTo}  method = 'get' encType='plain/text' className = 'contactForm'>
+            <form action = {mailTo}  method = 'get' encType = 'plain/text' className = 'contactForm'>
                 <p id = 'subjectFormLabel' className = 'emailFormLabels'>Subject</p>
-                <input name='subject' onChange={(e)=> setEmailSubject(prev => prev = e.target.value)} value ={emailSubject} className = 'emailInput' id = 'subjectInput' type='text'></input>
+                <input name = 'subject' onChange = {(e)=> setEmailSubject(prev => prev = e.target.value)} value ={emailSubject} className = 'emailInput' id = 'subjectInput' type='text'></input>
                 <p id = 'bodyFormLabel' className = 'emailFormLabels'>Text</p>
-                <textarea name ='body' onChange={(e)=> setEmailBody(prev => prev = e.target.value)} value ={emailBody} className = 'emailInput' id = 'bodyInput' type='text'></textarea>
-                <a className='mailToLink' onClick={handleUrlEncode} href = {`${mailTo}`} >Send Email!</a>
+                <textarea name = 'body' onChange = {(e)=> setEmailBody(prev => prev = e.target.value)} value = {emailBody} className = 'emailInput' id = 'bodyInput' type = 'text'></textarea>
+                <a className='mailToLink' onClick = {handleUrlEncode} href = {`${mailTo}`} >Send Email!</a>
                 <a href = {Resume} target='_blank' rel = 'noreferrer' className='resumeButton'>Show Resume</a>
             </form>
         </div>
