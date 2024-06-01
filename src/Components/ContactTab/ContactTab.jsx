@@ -7,16 +7,21 @@ export default function ContactTab() {
     const[emailBody, setEmailBody] = useState('')
     const[emailSubject, setEmailSubject] = useState('')
     const[buttonToggle, setButtonToggle] = useState('Contact Me')
+    // const mailModalDim = document.getElementById('formDiv')
+    
+    // window.onmousemove = () => {
+    //     console.log(window.event.clientX, window.event.clientY)
+    // }
    
     //detects scroll and executes function
-    window.onscroll= ()=>{
+    window.onscroll = ()=>{
         moveContactButton()
     }
     
     //encode url for mailto email handling
     const handleUrlEncode =()=>{
         const urlEncodedBody = emailBody.replaceAll(' ', '%20')
-        setMailTo(prev=>prev = `mailto:xavier.valtierra@icloud.com?subject=${emailSubject}&body=${urlEncodedBody}`)
+        setMailTo(prev => prev = `mailto:xavier.valtierra@icloud.com?subject=${emailSubject}&body=${urlEncodedBody}`)
         handleClearInputs()
     };
     // clear inputs after submit.

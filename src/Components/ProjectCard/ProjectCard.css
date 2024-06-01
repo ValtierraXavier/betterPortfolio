@@ -2,13 +2,41 @@
     display: flex;
     position: relative;
     flex-flow:column nowrap;
+    z-index: 0;
     width: 100%;
     height: 88%;
     border: solid lightblue 1px;
     border-radius: 5px;
-    padding: 1%;
     margin: 2.5% 0 1.5% 0;
     align-content: space-between;
+}
+
+.imgContainer > #linkModal{
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    visibility: hidden;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 56%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.card:hover > .imgContainer > #linkModal{
+    visibility: visible;
+    transition: .2s;
+    z-index: 100;
+}
+.links{
+    color: white;
+    font-size: xx-large;
+    text-decoration: none;
+}
+.links:hover{
+    color: lightblue;
+    cursor: pointer;
+    transition: .2s
 }
 
 .titleLink{
@@ -24,9 +52,8 @@
     color: lightblue;
     left: 1%;
 }
-
 .imgContainer{
-    max-width: 100%
+    max-width: 100%;
 }
 
 .projectImage{
@@ -40,7 +67,6 @@
     height: 92%;
     overflow-y: auto;
     justify-content: center;
-    top:1%;
     margin: 0;
 }
 
