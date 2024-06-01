@@ -43,9 +43,9 @@ export default function ContactTab() {
     const moveContactButton = async ()=>{
         const contactButton = document.getElementById('contactButton')
         const scrollPos =  window.visualViewport
-        if(scrollPos.pageTop >= 44 && scrollPos.width<500){
+        if(scrollPos.pageTop >= 44 && scrollPos.width<600){
             contactButton.style.top = '5px'
-        }else if(scrollPos.pageTop < 44 && scrollPos.width<500){
+        }else if(scrollPos.pageTop < 44 && scrollPos.width<600){
             contactButton.style.top = '45px'
         }
     }
