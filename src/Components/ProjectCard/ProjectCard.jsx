@@ -9,13 +9,13 @@ export default function ProjectCard({item}) {
               {item.projectName}
         </a>
 
-        <a className = 'imgContainer' href = {`${item.url}`} target = '_blank' rel="noreferrer">
+        <div className = 'imgContainer'>
           <div id = "linkModal">
-            <a className='links' id = 'githubLink' href = {`${item.gitUrl}`}>Github</a>
-            <a className='links' id = 'websiteLink' href = {`${item.url}`}>Website</a>
+            <a className='links' id = 'githubLink' href = {`${item.gitUrl}`} target ='_blank' rel="noreferrer">Github</a>
+            <a className='links' id = 'websiteLink' href = {`${item.url}`} target ='_blank' rel="noreferrer">Website</a>
           </div>
           <img className = 'projectImage' src={`${item.imgUrl}`} alt = "Project screen shots"></img>
-        </a>
+        </div>
         <div className='listContainer'>
           <ul className='projectList'>
             <li key = 'pLI1' className='projectListItems'>{item.point1}</li>
