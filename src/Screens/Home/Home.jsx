@@ -4,9 +4,11 @@ import './Home.css';
 export default function Home(){
 
     const [word, setWord] = useState()
-    let sentence = '';
-    let speed = 50
-    const sentenceArr = [        
+    const timeCheck = () =>{
+        return new Date().getTime({timeStyle: 'short'})
+    }
+    const sentenceArr = [   
+        `the time is ${timeCheck()}`,     
         "Hi! I'm Xavier", 
         "Welcome to my Portfolio!",
         "I hope you'll like it here.", 
@@ -27,26 +29,23 @@ export default function Home(){
     
             
             
-    const spellIt = async (sentArr) => {
-        
+    const spellIt = async () => {
         if(document.visibilityState==='visible'){
-            for(let i= 0; i<sentArr.length ;i++){
-            sentence = sentArr[i].split("")
-            let spelt = ''
-            for(let j=0;j <sentence.length; j++) {
-                const letter = sentence[j]
-                await spellSpeed(speed)
-                spelt += letter
-                setWord(prev => prev = spelt)
+            for(let s of sentenceArr){
+                let spelt = ''
+                for(let c of s) {
+                    await spellSpeed(50)
+                    .then((res) => spelt += c)
+                    .then((res) => setWord(prev => prev = spelt))
+                    .catch(e => console.log(e))
+                }
+                await selectSpeed(2000)        
+            }}else if(document.visibilityState==='hidden'){
+                setWord(prev => prev = '')
+                return
             }
-            await selectSpeed(2000)        
-        }}else if(document.visibilityState==='hidden'){
-            setWord(prev => prev = '')
-            return
-        }
     }
-    
-
+        
     useEffect(()=>{
         spellIt(sentenceArr)
         setInterval(()=> {spellIt(sentenceArr)},intervalTiming)

@@ -4,7 +4,7 @@ import ProjectCard from '../../Components/ProjectCard/ProjectCard.jsx'
 
 export default function Projects({ isLoading, projects}) {
 
-const proj = 'Projects'.split('')
+const proj = [...'Projects']
 
   return (
     <div className='projectPageContainer' id='projectPageContainer'>

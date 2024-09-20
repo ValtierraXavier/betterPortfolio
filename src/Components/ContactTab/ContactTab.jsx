@@ -10,7 +10,6 @@ export default function ContactTab() {
         body: ''
     })   
     const cont = document.getElementById('contactContainer')
-    const form = document.getElementById('formDiv')
     
     
     
@@ -74,18 +73,17 @@ export default function ContactTab() {
             body:''
         })
     }
-
+    //closes the contact div when there is a click outside its window. 
     document.addEventListener('click',(e) => {
-        if(form && contactOpen === 'open'){
-            const formDim = form.getBoundingClientRect()
+        if(cont && contactOpen === 'open'){
+            const formDim = cont.getBoundingClientRect()
             if(e.clientX > formDim.right || e.clientX < formDim.left ||e.clientY > formDim.bottom || e.clientY < formDim.top){
                 closeContact()
                 handleClearInputs()
             }
-            console.log(e.clientX, formDim.right)
         }
     })
-    
+    //handles changes in form. updates state to keep changes
     const handleChange = (e) => {
         e.preventDefault()
         let formInput = {
@@ -95,8 +93,7 @@ export default function ContactTab() {
         setContactForm(prev => prev = formInput)
     }
     
-    return (
-        
+    return (  
         <div className='contactContainer' id='contactContainer'>
         
         {contactOpen === 'close'?
