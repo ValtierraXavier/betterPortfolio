@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ContactTab from '../../Components/ContactTab/ContactTab.jsx';
 import './Home.css';
 
 export default function Home(){
@@ -59,7 +58,6 @@ export default function Home(){
             <div className = 'blurbContainer' >
                 <div className='typedBlurb' id='content1' >{word}</div>
             </div>
-            <ContactTab/>
         </div>
     );
 }

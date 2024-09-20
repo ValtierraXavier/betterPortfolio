@@ -9,3 +9,6 @@ body,html{
     padding: 1% .5%;
     background-image: linear-gradient(to bottom right, rgb(30,30,30), black);
 }
+.app{
+    height: 100dvh;
+}

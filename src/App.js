@@ -4,6 +4,7 @@ import About from './Screens/About/About.jsx';
 import Projects from './Screens/Projects/Projects.jsx';
 import { useEffect, useRef, useState } from 'react';
 import { getAllData } from './Services/projectServices.js';
+import ContactTab from './Components/ContactTab/ContactTab.jsx';
 
 function App() {
 
@@ -78,6 +79,7 @@ const getProjectData = async () => {
 
   return (
     <div className = 'App'>
+      <ContactTab/>
       <Home/>
       <About/>
       <Projects isLoading = {isLoading}  setLoadProjects ={setLoadProjects} projects = {projects} setProjects = {setProjects} projectNameRef = {projectNameRef}/>

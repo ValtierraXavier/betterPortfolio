@@ -1,71 +1,122 @@
 import React, {useState} from 'react'
 import './ContactTab.css'
-import Resume from '../../Assets/XaviersResume2023.pdf'
+import Resume from '../../Assets/XavierVResume.pdf'
 
 export default function ContactTab() {
     const[mailTo, setMailTo] = useState('mailto:xavier.valtierra@icloud.com')
-    const[emailBody, setEmailBody] = useState('')
-    const[emailSubject, setEmailSubject] = useState('')
-    const[buttonToggle, setButtonToggle] = useState('Contact Me')
-    // const mailModalDim = document.getElementById('formDiv')
+    const[contactOpen, setContactOpen] = useState('close')
+    const[contactForm, setContactForm] = useState({
+        subject: '',
+        body: ''
+    })   
+    const cont = document.getElementById('contactContainer')
+    const form = document.getElementById('formDiv')
     
-    // window.onmousemove = () => {
-    //     console.log(window.event.clientX, window.event.clientY)
-    // }
-   
-    //detects scroll and executes function
+    
+    
+    // moves the contact tab to the top of the page when at the top.
+    const moveContactButton = ()=>{
+        const contactButton = document.getElementById('contactContainer')
+        // const contactButton = document.getElementById('contact')
+        const scrollPos =  window.visualViewport
+        if(scrollPos.pageTop >= 44 && scrollPos.width<900 && contactOpen === 'close'){
+            contactButton.style.top = '5px'
+        }else if(scrollPos.pageTop < 44 && scrollPos.width<900 && contactOpen === 'close'){
+            contactButton.style.top = '45px'
+        }
+    }
+    // detects scroll and executes function
     window.onscroll = ()=>{
         moveContactButton()
     }
     
-    //encode url for mailto email handling
-    const handleUrlEncode =()=>{
-        const urlEncodedBody = emailBody.replaceAll(' ', '%20')
-        setMailTo(prev => prev = `mailto:xavier.valtierra@icloud.com?subject=${emailSubject}&body=${urlEncodedBody}`)
+    const openContact = () => {
+        setContactOpen(prev => prev = 'open')
+        if(window.innerWidth > 900){
+            cont.style.left = '67.5dvw'
+        }else{
+            cont.style.left = '1dvw'
+            cont.style.top = '3dvh'
+            cont.style.height = '40dvh'
+            if(window.innerHeight <= 400){
+                cont.style.height = '98dvh'
+                cont.style.top = '.5dvh'
+            }else{
+                cont.style.top = '6dvh'
+            }
+        }
+    }
+    const closeContact = () => {
+        setContactOpen(prev => prev = 'close')
+        if(window.innerWidth > 900){
+            cont.style.left = '91dvw'
+        }else{
+            cont.style.top = '45px'
+            if(window.innerHeight <= 400){
+                cont.style.height = '2rem'
+            }else{
+                cont.style.height = '2rem'
+                cont.style.top = '6dvh'
+            }
+        }
+    }
+
+    // //encode url for mailto email handling
+    const sendEmail =()=>{
+        const urlEncodedBody = contactForm.body.replaceAll(' ', '%20')
+        setMailTo(prev => prev = `mailto:xavier.valtierra@icloud.com?subject=${contactForm.subject}&body=${urlEncodedBody}`)
         handleClearInputs()
     };
     // clear inputs after submit.
     const handleClearInputs =()=>{
-        setEmailSubject(prev => prev = '')
-        setEmailBody(prev => prev = '')
+        setContactForm(prev => prev = {
+            subject: '',
+            body:''
+        })
     }
-    
-    //toggles "contact me" button to a close modal button or vice-versa
-    const toggleButtonText = ()=>{
-        if(buttonToggle === 'Contact Me'){
-            setButtonToggle(prev=>prev='Close')
-        } else if(buttonToggle === 'Close') {
-            setButtonToggle(prev=>prev='Contact Me')
+
+    document.addEventListener('click',(e) => {
+        if(form && contactOpen === 'open'){
+            const formDim = form.getBoundingClientRect()
+            if(e.clientX > formDim.right || e.clientX < formDim.left ||e.clientY > formDim.bottom || e.clientY < formDim.top){
+                closeContact()
+                handleClearInputs()
+            }
+            console.log(e.clientX, formDim.right)
         }
-    }
+    })
     
-    // moves the contact tab to the top of the page when at the top.
-    const moveContactButton = async ()=>{
-        const contactButton = document.getElementById('contactButton')
-        const scrollPos =  window.visualViewport
-        if(scrollPos.pageTop >= 44 && scrollPos.width<600){
-            contactButton.style.top = '5px'
-        }else if(scrollPos.pageTop < 44 && scrollPos.width<600){
-            contactButton.style.top = '45px'
+    const handleChange = (e) => {
+        e.preventDefault()
+        let formInput = {
+            ...contactForm,
+            [e.target.name]: e.target.value
         }
+        setContactForm(prev => prev = formInput)
     }
     
-  return (
-    
-    <div className = 'contactTabContainer'> 
-        <label className = 'contactButton' id = "contactButton" htmlFor = 'toggleContact' onClick={toggleButtonText}>{buttonToggle}</label>  
-        <input type = 'checkbox' id = 'toggleContact'></input>
-        <div className = 'contactButton' id = 'formDiv'>
-            <h4 className = 'contactFormTitle'>Send me an Email</h4>
-            <form action = {mailTo}  method = 'get' encType = 'plain/text' className = 'contactForm'>
-                <p id = 'subjectFormLabel' className = 'emailFormLabels'>Subject</p>
-                <input name = 'subject' onChange = {(e)=> setEmailSubject(prev => prev = e.target.value)} value ={emailSubject} className = 'emailInput' id = 'subjectInput' type='text'></input>
-                <p id = 'bodyFormLabel' className = 'emailFormLabels'>Text</p>
-                <textarea name = 'body' onChange = {(e)=> setEmailBody(prev => prev = e.target.value)} value = {emailBody} className = 'emailInput' id = 'bodyInput' type = 'text'></textarea>
-                <a className='mailToLink' onClick = {handleUrlEncode} href = {`${mailTo}`} >Send Email!</a>
-                <a href = {Resume} target='_blank' rel = 'noreferrer' className='resumeButton'>Show Resume</a>
-            </form>
+    return (
+        
+        <div className='contactContainer' id='contactContainer'>
+        
+        {contactOpen === 'close'?
+            <div className='button' id='openbutton' onClick={openContact}>Contact Me</div>
+            :
+            <div className = 'area' id = 'formDiv'> 
+                <div id='closebutton' onClick={closeContact}>Close</div>
+                <form action = {mailTo}  method = 'get' encType = 'plain/text' className = 'form' >
+                    <h3 className = 'contactFormTitle' id ='label form'>Send me an email</h3>
+                    <label id = 'label subject' className = 'emailFormLabels'>Subject</label>
+                    <input name = 'subject' onChange = {handleChange} value ={contactForm.subject} className = 'emailInput' id = 'subject' type='text'></input>
+                    <label id = 'body label' className = 'emailFormLabels'>Text</label>
+                    <textarea name = 'body' onChange = {handleChange} value = {contactForm.body} className = 'emailInput' id = 'body' type = 'text'></textarea>
+                    <div className='formButtonsDiv'>
+                        <a className='formButtons' id='send link' onClick = {sendEmail} href = {`${mailTo}`} >Send Email!</a>
+                        <a className='formButtons'href = {Resume} target='_blank' rel = 'noreferrer' id='resume link'>Show Resume</a>
+                    </div>
+                </form>
+            </div>
+        }
         </div>
-    </div>
-  )
+    )
 }

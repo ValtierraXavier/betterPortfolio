@@ -1,255 +1,138 @@
-.contactButton{
-    display:flex;
+.contactContainer{
+    z-index: 5;
+    display: flex;
+    position: fixed;
     justify-content: center;
     align-items: center;
-    color: white;
-    background: rgba(0,0,0,.85);
-    position: fixed;
-    z-index: 400;
-    height: 2rem;
+    left: 91dvw;
+    height: auto;
+    width: auto;
+    border: solid lightblue 1px;
     border-radius: 5px;
-    padding: 5px ;
-    top: 20px;
-    right: 100px;
-    transition: ease-in-out .2s;
-    white-space: nowrap;
-    font-weight: 600;
-    -webkit-user-select: none;
+    box-sizing: border-box;
+    padding: 2px;
+    background-color: rgba(0,0,0,.85);
+    transition: all .2s ease-in-out;
 }
-
-#contactButton{
-    visibility: visible;
+#openbutton{
+    z-index: 6;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    cursor:grab
 }
 
 #formDiv{
-    visibility: hidden;
-    flex-flow: column nowrap;
-    color: rgba(0,0,0,0);
-    background: rgba(0,0,0,0);
-    transition: .2s ease-in-out;
-}
-
-#toggleContact:checked ~ #formDiv > .contactForm > .emailInput{
-    visibility: visible;
-    width:90%;
-    background-color: rgba(255, 255, 255, 1);
-    border: solid black 1px;
-    margin: 0 5%;
-}
-
-.contactForm{
-    display: flex;
-    flex-flow: column nowrap;
-    width: 90%;
-    background: rgba(0,0,0,0);
-    transition: .2s ease-in-out;
-}
-
-#toggleContact:checked ~ #formDiv{
-    z-index: 500;
-    color: rgba(0,0,0,1);
-    background: rgba(255, 255, 255, 1);
-    border: solid rgb(255, 255, 255, 1);
-    left: 70vw;
-    height: 300px;
-    visibility: visible;
-    top: 15vh;
-}
-
-#toggleContact:checked ~ #contactButton{
-    visibility: visible;
-    left: 800px;
-    height: 300px;
-}
-
-#toggleContact:checked ~ #formDiv > .contactForm > .mailToLink{
-    visibility: visible;
-    height: 1rem;
-    font-size: 1rem;
-    width: 90%;
-    margin: 2% 5% 0% 5%;
-}
-
-#toggleContact:checked ~ #formDiv > .contactForm > .resumeButton{
-    visibility: visible;
-    height: 1rem;
-    font-size: 1rem;
-    width: 90%;
-    margin: 2% 5% 0% 5%;
-}
-
-.emailFormLabels{
-    position: relative;
-    font-size: .6rem;
-    margin:0 0 .4rem 4%;
-    left: 0;
-    transition: .2s ease-in-out;
-}
-
-#bodyFormLabel{
-    position:relative;
-    margin-top: 1rem;
-}
-
-.mailToLink{
     display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    height: 0rem;
-    font-size: 0rem;
-    width: 0%;
-    text-decoration: none;
-    color: white;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    padding: 2%;
     border-radius: 5px;
-    background-color: black;
-    transition: .2s ease-in-out;
-    visibility: hidden;
-    padding: 5px;
+    box-sizing: border-box;
+    height: auto;
+    width: 30dvw;
 }
 
-.mailToLink:hover{
-    background-color: lightblue;
-    color:black;
+#closebutton{
+    display: flex;
+    position: relative;
+    width: fit-content;
+    padding: 1%;
+    box-sizing: border-box;
 }
-
-
-#bodyInput{
-    height: 5rem;
-    resize:none;
+.form{
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100%;
+    height: auto;
 }
-
 .emailInput{
-    position: relative;
-    padding: 5px;
-    width: 0%;
-    background-color: rgba(255, 255, 255, 0);
-    box-shadow: none;
-    border: solid rgba(0, 0, 0, 0) 1px;
+    height: 2rem;
+    font-size: 1.2rem;
     border-radius: 5px;
-    visibility: hidden;
-    top:0px;
-    left:0px;
-    transition:width .5s ease .15s, background-color .2s ease .15s, box-shadow .2s ease .05s, top .2s ease-in-out, left .2s ease-in-out;
+    border: none;
+    margin: 1% 0%;
+    box-sizing: border-box;
+    padding: 1%;
 }
-
-#bodyInput:focus{
-    -webkit-appearance: none;
-    top: -5px;
-    left: -5px;    
-    outline: none;
-    box-shadow: darkgrey 5px 5px 5px;
-    border: solid lightblue 1px;
+.formButtonsDiv{
+    display: flex; 
+    flex-flow: row;
+    width: auto;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
-
-#subjectInput:focus{
-    -webkit-appearance: none;
-    top: -5px;
-    left: -5px;    
-    outline: none;
-    box-shadow: darkgrey 5px 5px 5px;
-    border: solid lightblue 1px;
+#body{
+    height: 5rem;
+    resize: none;
 }
-
-#toggleContact{
-    visibility: hidden;
-    position: absolute;
-}
-
-.resumeButton{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-    height: 0rem;
-    font-size: 0rem;
-    width: 0%;
+.formButtons{
+    border: solid lightblue 2px;
+    border-radius: 5px;
+    height: 2rem;
+    width: 49%;
+    font-size: 1.2rem;
+    text-align: center;
     text-decoration: none;
+    box-sizing: border-box;
+    /* margin: 1% 0%; */
+    background-color: rgba(0,0,0,.85);
     color: white;
-    border-radius: 5px;
-    background-color: black;
-    visibility: hidden;
-    padding: 5px;
-    transition: .2s ease-in-out;
+    transition: all .2s ease-in-out
 }
-
-.resumeButton:hover{
+.formButtons:hover{
     background-color: lightblue;
-    color:black;
+    border: solid lightgrey 2px;
+    color: black
 }
-
 
 @media(min-width: 2658px) and (max-width: 4253px){
-    #toggleContact:checked ~ #formDiv{
-        left: 60vw;
-        height: 650px;
-        visibility: visible;
-        top: 75px;
-        font-size:2rem;
-    }
-
-    .emailFormLabels{
-        font-size: 1.2rem;
+    #contactContainer{
     }
 }
 
 @media(min-width: 1280px) and (max-width:2657px){
-    .contactButton{
-        top:22px;
-    }
-
-    #toggleContact:checked ~ #formDiv{
-        left: 60vw;
-        height: 400px;
-        visibility: visible;
-        top: 75px;
-        font-size:2rem;
-    }
-
-    .emailFormLabels{
-        font-size: 1.2rem;
+    #contactContainer{
     }
 }
 
 @media(min-width: 601px) and (max-width: 1279px){
-    .contactButton{
-        left: 75vw;
-        right: 5vw;
-        top: 35px;
+    #contactContainer{
+        top: 45px;
+        width: 98dvw;
+        height: 1.6rem;
+        left: 1dvw;
     }
-
-    #toggleContact:checked ~ #formDiv{
-        z-index: 300px;
-        color: rgba(0,0,0,1);
-        background: rgb(255, 255, 255);
-        left: 49vw;
-        width: 45vw;
-        height: 300px;
-        visibility: visible;
-        top: 75px;
+    #formDiv{
+        width: 98dvw;
     }
-    
+    .contactFormTitle{
+        margin: 0;
+    }
+    #openButton{
+        width: 98dvw;
+    }
 }
 
 @media(min-width: 200px) and (max-width:600px){
-    .contactButton{
-        right: 5vw;
-        left: 5vw;
+    #contactContainer{
         top: 45px;
+        width: 98dvw;
+        height: 2rem;
+        left: 1dvw;
     }
-
-    #toggleContact:checked ~ #formDiv{
-        z-index: 300px;
-        color: rgba(0,0,0,1);
-        background: rgb(255, 255, 255);
-        border: solid rgb(255, 255, 255);
-        left: 1.5vw;
-        right: 6vw;
-        height: 300px;
-        width: 95vw;
-        visibility: visible;
-        top: 17vh;
+    #formDiv{
+        width: 98dvw;
+    }
+    .contactFormTitle{
+        margin: 0;
+    }
+    #openButton{
+        width: 98dvw;
     }
 }
