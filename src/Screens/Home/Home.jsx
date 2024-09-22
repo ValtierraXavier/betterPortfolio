@@ -5,10 +5,9 @@ export default function Home(){
 
     const [word, setWord] = useState()
     const timeCheck = () =>{
-        return new Date().getTime({timeStyle: 'short'})
+        return new Date().toLocaleTimeString('en-US', {timeStyle: "short", hour12: true})
     }
     const sentenceArr = [   
-        `the time is ${timeCheck()}`,     
         "Hi! I'm Xavier", 
         "Welcome to my Portfolio!",
         "I hope you'll like it here.", 
@@ -25,9 +24,7 @@ export default function Home(){
     const selectSpeed = (ms)=>{
         return new Promise(
             resolve => {setTimeout(()=>{resolve('')}, ms)}
-            )}
-    
-            
+            )}       
             
     const spellIt = async () => {
         if(document.visibilityState==='visible'){

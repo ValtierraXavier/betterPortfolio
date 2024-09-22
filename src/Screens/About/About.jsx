@@ -6,12 +6,8 @@ export default function About() {
 //content to 'type out' line by line. 
 // work on this statement. make it more consice.
 const pageContent = [
-  "   I am a full (MERN) stack developer dedicated to bringing your website visions to reality.", 
-  "  I am very fluent in HTML CSS and JAVASCRIPT and I use REACT and Express to bring it all together.",
-  "  I have always had a passion for electronics and tech and I bring that passion to all my projects.",
-  "  I am currently looking for a Junior Developer role; working with people who take pride in their work and who try to consisitently improve.",
-  "  I am very excied to start work on exciting new projects with intelligent new people.",
-  "  Shoot me an Email. I would love to hear from you!"
+  "Full (MERN) stack developer looking for remote, New York or New Jersey Based roles.",
+  "I'm looking forward to get started on some projects."
 ]
 
 //skillset dataset for the skillsModal. 
@@ -67,7 +63,6 @@ const [skillsModal, setSkillsModal] =  useState({})
 const skillThing = document.getElementById('skillsModalWindow') 
 const whoAmI = [..."Who Am I"]
 const techSkills = [..."Technical Skills"]
-
 
 //sets the timing for the snetence selection using a promise
 const selectionSpeed = (ms) => {
