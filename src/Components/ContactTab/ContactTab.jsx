@@ -9,7 +9,6 @@ export default function ContactTab() {
         subject: '',
         body: ''
     })  
-    const[contactSt, setContactSt] = useState() 
     
     // moves the contact tab to the top of the page when at the top.
     const moveContactButton = ()=>{
@@ -26,80 +25,35 @@ export default function ContactTab() {
     window.onscroll = ()=>{
         moveContactButton()
     }
-    const cont = document.getElementById("contactContainer")
-    // const cont = document.getElementById("contactContainer")
-    // const openContact = () => {
-    //     // const cont = document.getElementById("contactContainer")
-    //     setContactOpen(prev => prev = 'open')
-    //     if(window.innerWidth > 900){
-    //         cont.style.left = '67.5dvw'
-    //     }else{
-    //         cont.style.left = '1dvw'
-    //         cont.style.top = '3dvh'
-    //         cont.style.height = '40dvh'
-    //         if(window.innerHeight <= 400){
-    //             cont.style.height = '98dvh'
-    //             cont.style.top = '.5dvh'
-    //         }else{
-    //             cont.style.top = '6dvh'
-    //         }
-    //     }
-    // }
-    // const closeContact = () => {
-    //     // const cont = document.getElementById("contactContainer")
-    //     setContactOpen(prev => prev = 'close')
-    //     if(window.innerWidth > 900){
-    //         cont.style.left = '91dvw'
-    //     }else{
-    //         cont.style.top = '45px'
-    //         if(window.innerHeight <= 400){
-    //             cont.style.height = '2rem'
-    //         }else{
-    //             cont.style.height = '2rem'
-    //             cont.style.top = '6dvh'
-    //         }
-    //     }
-    // }
     const openContact = () => {
-        // const cont = document.getElementById("contactContainer")
+        const cont = document.getElementById("contactContainer")
         setContactOpen(prev => prev = 'open')
         if(window.innerWidth > 900){
-            setContactSt(prev => prev = {left: '67.5dvw'})
+            cont.style.left = '67.5dvw'
         }else{
-            setContactSt(prev => prev = {
-                left: "idvw",
-                top: "3dvh",
-                height: "40dvh"
-            })
+            cont.style.left = '1dvw'
+            cont.style.top = '3dvh'
+            cont.style.height = '40dvh'
             if(window.innerHeight <= 400){
-                setContactSt(prev => prev = {
-                    height: "98dvh",
-                    top: ".5dvh"
-                })
+                cont.style.height = '98dvh'
+                cont.style.top = '.5dvh'
             }else{
-                setContactSt(prev => prev = {top: "6dvh"})
-                // cont.style.top = '6dvh'
+                cont.style.top = '6dvh'
             }
         }
     }
     const closeContact = () => {
-        // const cont = document.getElementById("contactContainer")
+        const cont = document.getElementById("contactContainer")
         setContactOpen(prev => prev = 'close')
         if(window.innerWidth > 900){
-            setContactSt(prev => prev = {left: '91dvw'})
             cont.style.left = '91dvw'
         }else{
-            setContactSt(prev => prev = {
-                top: "45px",
-            })
+            cont.style.top = '45px'
             if(window.innerHeight <= 400){
-                setContactSt(prev => prev ={height: "2rem"})
+                cont.style.height = '2rem'
             }else{
-                setContactSt(prev => prev = {
-                    height: "2rem",
-                    top: "6dvh"
-                })
-               
+                cont.style.height = '2rem'
+                cont.style.top = '6dvh'
             }
         }
     }
@@ -118,7 +72,7 @@ export default function ContactTab() {
     }
     //closes the contact div when there is a click outside its window. 
     document.addEventListener('click',(e) => {
-        // const cont = document.getElementById("contactContainer")
+        const cont = document.getElementById("contactContainer")
         if(cont && contactOpen === 'open'){
             const formDim = cont.getBoundingClientRect()
             if(e.clientX > formDim.right || e.clientX < formDim.left ||e.clientY > formDim.bottom || e.clientY < formDim.top){
@@ -138,7 +92,7 @@ export default function ContactTab() {
     }
     
     return (  
-        <div className='contactContainer' id='contactContainer' style = {contactSt}>
+        <div className='contactContainer' id='contactContainer'>
         {contactOpen === 'close'?
             <div className='button' id='openbutton' onClick={openContact}>Contact Me</div>
             :
