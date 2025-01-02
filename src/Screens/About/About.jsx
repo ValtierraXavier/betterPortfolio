@@ -6,8 +6,8 @@ export default function About() {
 //content to 'type out' line by line. 
 // work on this statement. make it more consice.
 const pageContent = [
-  "Full (MERN) stack developer looking for remote, New York or New Jersey Based roles.",
-  "I'm looking forward to get started on some projects."
+  "I am a full (MERN) stack developer looking for front/backend roles. ",
+  "Check out my projects below!"
 ]
 
 //skillset dataset for the skillsModal. 
@@ -101,8 +101,8 @@ const blinker = (ms) => {
 //Opens SkillSetModal with referenced data triggered by mouseEnter
 const openModal =(el, rec) => {
   //used to find outter dimensions of element to render skills modal within viewport (WIP)
-  const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
-  const modalRect = skillThing.getBoundingClientRect()
+  // const pageCont = document.getElementById('aboutPageContainer').getBoundingClientRect()
+  // const modalRect = skillThing.getBoundingClientRect()
   skillThing.style.display = 'inline'
   skillThing.style.height = 'fit-content'
   skillThing.style.left = `${(rec.left -37)}px`
@@ -129,16 +129,16 @@ function highLight(e){
 }
 
 
-const [showFakeCursor, setShowFakeCursor] = useState(false)
+const [showFakeCursor, setShowFakeCursor] = useState(0)
 const blinkOn = async()=>{
-  setShowFakeCursor(prev => prev = true)
+  setShowFakeCursor(prev => prev = 1)
   try{
     await blinker(1000)
     blinkOff()
   }catch(error){console.log(error)}
 }
 const blinkOff = async()=>{
-  setShowFakeCursor(prev => prev = false)
+  setShowFakeCursor(prev => prev = 0)
   try{
     await blinker(1000)
     blinkOn()
